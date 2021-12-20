@@ -21,11 +21,9 @@
     <link href="../static/assets/css/skin-modes.css"
           th:href="@{/assets/css/skin-modes.css}" rel="stylesheet"/>
 
-
     <!-- Font-awesome  css -->
     <link href="../static/assets/css/icons.css"
           th:href="@{/assets/css/icons.css}" rel="stylesheet"/>
-
 
     <!-- Owl Theme css-->
     <link href="../static/assets/plugins/owl-carousel/owl.carousel.css"
@@ -36,7 +34,6 @@
     <link href="../static/assets/plugins/select2/select2.min.css"
           th:href="@{/assets/plugins/select2/select2.min.css}" rel="stylesheet"/>
 
-
     <!-- Jquery ui RangeSlider css -->
     <link href="../static/assets/plugins/jquery-uislider/jquery-ui.css"
           th:href="@{/assets/plugins/jquery-uislider/jquery-ui.css}" rel="stylesheet"/>
@@ -44,7 +41,6 @@
     <!-- Custom scroll bar css-->
     <link href="../static/assets/plugins/scroll-bar/jquery.mCustomScrollbar.css"
           th:href="@{/assets/plugins/scroll-bar/jquery.mCustomScrollbar.css}" rel="stylesheet"/>
-
 
     <!--Image-tooltip css-->
     <link href="../static/assets/plugins/image-tooltip/image-tooltip.css"
@@ -100,7 +96,8 @@
                             <ul class="horizontalMenu-list">
                                 <li aria-haspopup="true"><i class="fe fe-home"></i><a th:href="@{/}">Home </a></li>
                                 <li aria-haspopup="true" th:if="${isAdmin}">
-                                    <i class="fe fe-codepen"></i><a th:href="@{/auth/addons/approve}">Approve New Addons</a>
+                                    <i class="fe fe-codepen"></i><a th:href="@{/auth/addons/approve}">Approve New
+                                    Addons</a>
                                 </li>
                                 <li aria-haspopup="true">
                                     <i class="fe fe-codepen"></i><a th:href="@{/addons/all}">All Addons</a>
@@ -110,8 +107,10 @@
                                 <li aria-haspopup="true" th:if="${isEnabledUser}">
                                     <i class="fe fe-upload"></i> <a th:href="@{/auth/addons/new}"> Upload Addon</a></li>
                                 <li aria-haspopup="true" th:if="${isEnabledUser}">
-                                    <i class="fa fa-envelope"></i> <a th:href="@{/user/invite}"> Invite a friend</a></li>
-                                <li aria-haspopup="true"><i class="fe fe-globe"></i><a th:href="@{/contact}"> Contacts</a>
+                                    <i class="fa fa-envelope"></i> <a th:href="@{/user/invite}"> Invite a friend</a>
+                                </li>
+                                <li aria-haspopup="true"><i class="fe fe-globe"></i><a th:href="@{/contact}">
+                                    Contacts</a>
                                 </li>
                             </ul>
                         </nav>
@@ -144,34 +143,41 @@
         <div class="row">
             <div class="single-page">
                 <div class="col-lg-5 col-xl-4 col-md-6 d-block mx-auto">
-                    <div class="wrapper wrapper2">
-                        <div class="card-body pb-4">
+                    <div class="card mb-xl-0">
+                        <div class="card-body">
+
+                            <form th:action="@{/auth/login}" th:object="${login}" method="post">
+                                <div class="form-group">
+                                    <label style="color: red" class="error" th:errors="*{username}">Username
+                                        error</label>
+                                    <label class="form-label text-dark">Username</label>
+                                    <input type="text" class="form-control" th:field="*{username}">
+                                </div>
+
+                                <div class="passwd">
+                                    <label style="color: red" class="error" th:errors="*{password}">Password
+                                        error</label>
+                                    <label class="form-label text-dark">Password</label>
+                                    <input type="password" class="form-control" th:field="*{password}">
+                                </div>
+
+                                <div class="d-grid">
+                                    <center>
+                                        <button type="submit" value="Save" class="btn btn-danger">Login
+                                        </button>
+                                    </center>
+                                </div>
+                                <center>
+                                    <p class="mb-2"><a >Forgot Password</a></p>
+                                </center>
+                                <center>
+                                    <p class="text-dark mb-0">Don't have account?
+                                        <a th:href="@{/auth/register}" class="text-primary ml-1">Create free account</a>
+                                    </p>
+                                </center>
+                            </form>
+
                         </div>
-                        <form action="#" th:action="@{/auth/login}" th:object="${login}" method="post">
-                            <div class="username">
-                                <input type="text" th:field="*{username}" name="username">
-                                <label>Username</label>
-                                <label style="color: red" class="error" th:errors="*{username}">Username error
-                                    placeholder </label>
-                            </div>
-                            <div class="passwd mb-0">
-                                <input type="password" th:field="*{password}">
-                                <label>Password</label>
-                                <label style="color: red" class="error" th:errors="*{password}">Password error
-                                </label>
-                            </div>
-                            <div class="form-group pt-3 rememberme-style">
-                            </div>
-                            <div class="d-grid">
-                                <button type="submit" value="Save" class="btn btn-danger">
-                                    Login
-                                </button>
-                            </div>
-                            <p class="mb-2"><a href="forgot.html">Forgot Password</a></p>
-                            <p class="text-dark mb-0">Don't have account?<a th:href="@{/auth/register}"
-                                                                            class="text-primary ml-1">Create free
-                                account</a></p>
-                        </form>
                     </div>
                 </div>
             </div>
@@ -273,86 +279,61 @@
 <a href="#top" id="back-to-top"><i class="fa fa-long-arrow-up"></i></a>
 
 <!-- JQuery js-->
-<!-- JQuery js-->
 <script src="../static/assets/js/jquery-3.2.1.min.js"
-        th:src="@{/assets/js/jquery-3.2.1.min.js}"
-></script>
+        th:src="@{/assets/js/jquery-3.2.1.min.js}"></script>
 
 <!-- Bootstrap js -->
 <script src="../static/assets/plugins/bootstrap-4.3.1/js/popper.min.js"
-        th:src="@{/assets/plugins/bootstrap-4.3.1/js/popper.min.js}"
-></script>
+        th:src="@{/assets/plugins/bootstrap-4.3.1/js/popper.min.js}"></script>
 
 <script src="../static/assets/plugins/bootstrap-4.3.1/js/bootstrap.min.js"
-        th:src="@{/assets/plugins/bootstrap-4.3.1/js/bootstrap.min.js}"
-></script>
+        th:src="@{/assets/plugins/bootstrap-4.3.1/js/bootstrap.min.js}"></script>
 
 <!--JQuery IT Itemsrkline js-->
 <script src="../static/assets/js/jquery.sparkline.min.js"
-        th:src="@{/assets/js/jquery.sparkline.min.js}"
-
-></script>
+        th:src="@{/assets/js/jquery.sparkline.min.js}"></script>
 
 <!-- Circle Progress js-->
 <script src="../static/assets/js/circle-progress.min.js"
-        th:src="@{/assets/js/circle-progress.min.js}"
-
-></script>
+        th:src="@{/assets/js/circle-progress.min.js}"></script>
 
 <!-- Star Rating js-->
 <script src="../static/assets/plugins/rating/jquery.rating-stars.js"
-        th:src="@{/assets/plugins/rating/jquery.rating-stars.js}"
-
-></script>
+        th:src="@{/assets/plugins/rating/jquery.rating-stars.js}"></script>
 
 <!--Owl Carousel js -->
 <script src="../static/assets/plugins/owl-carousel/owl.carousel.js"
-        th:src="@{/assets/plugins/owl-carousel/owl.carousel.js}"
-
-></script>
+        th:src="@{/assets/plugins/owl-carousel/owl.carousel.js}"></script>
 
 <!--Horizontal Menu js-->
 <script src="../static/assets/plugins/horizontal-menu/horizontal-menu.js"
-        th:src="@{/assets/plugins/horizontal-menu/horizontal-menu.js}"
-
-></script>
+        th:src="@{/assets/plugins/horizontal-menu/horizontal-menu.js}"></script>
 
 <!--JQuery TouchSwipe js-->
 <script src="../static/assets/js/jquery.touchSwipe.min.js"
-        th:src="@{/assets/js/jquery.touchSwipe.min.js}"
-
-></script>
+        th:src="@{/assets/js/jquery.touchSwipe.min.js}"></script>
 
 <!--Select2 js -->
 <script src="../static/assets/plugins/select2/select2.full.min.js"
-        th:src="@{/assets/plugins/select2/select2.full.min.js}"
-
-></script>
+        th:src="@{/assets/plugins/select2/select2.full.min.js}"></script>
 <script src="../static/assets/js/select2.js"
-        th:src="@{/assets/js/select2.js}"
-
-></script>
+        th:src="@{/assets/js/select2.js}"></script>
 
 <!-- Custom scroll bar js-->
 <script src="../static/assets/plugins/scroll-bar/jquery.mCustomScrollbar.js"
-        th:src="@{/assets/plugins/scroll-bar/jquery.mCustomScrollbar.js}"
-
-></script>
+        th:src="@{/assets/plugins/scroll-bar/jquery.mCustomScrollbar.js}"></script>
 
 <!-- sticky js-->
 <script src="../static/assets/js/sticky.js"
-        th:src="@{/assets/js/sticky.js}"
-></script>
+        th:src="@{/assets/js/sticky.js}"></script>
 
 <!-- Image-tooltip js -->
 <script src="../static/assets/plugins/image-tooltip/image-tooltip.js"
-        th:src="@{/assets/plugins/image-tooltip/image-tooltip.js}"
-></script>
+        th:src="@{/assets/plugins/image-tooltip/image-tooltip.js}"></script>
 
 <!-- Swipe js-->
 <script src="../static/assets/js/swipe.js"
-        th:src="@{/assets/js/swipe.js}"
-></script>
+        th:src="@{/assets/js/swipe.js}"></script>
 
 <!-- Scripts js-->
 <script src="../static/assets/js/owl-carousel.js"
@@ -360,8 +341,7 @@
 
 <!-- Custom Js-->
 <script src="../static/assets/js/custom.js "
-        th:src="@{/assets/js/custom.js}"
-></script>
+        th:src="@{/assets/js/custom.js}"></script>
 
 </body>
 </html>
