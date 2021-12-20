@@ -1,10 +1,21 @@
 # Addonis - The better add-ons registry.
 Graduate project of **Hristian Ivanov** and **Ivan Ivanov**.
+
 ## Description
 
 **Addonis is an Addons Registry web application.Allows users to download addons that are appropriate for their IDE, rate addons uploaded by others and upload their own addons.**
 
-Some of the possible actions it enables its **anonymous** users to do are:
+Admin username: admin  
+Admin passowrd: aA!12345678  
+
+Enabled user username: user1
+Enabled user passowrd: aA!12345678  
+
+Disabled user username: user9
+Disabled user passowrd: aA!12345678  
+
+
+Some of the possible actions for **not registered** users are:
 
 **·** Login and register.
 
@@ -16,9 +27,9 @@ Some of the possible actions it enables its **anonymous** users to do are:
 
 **·** Download addons.
 
-Some of the possible actions it enables its **enabled** users to do are:
+Some of the possible actions for **registered** users are:
 
-**·** First, they must first verify their accounts via email if they want to have rights and be able to upload addons.
+**·** First, they must first verify their accounts via email if they want to have rights and be able to upload addons, otherwise they will have the same privilidges as not registered users.
 
 **·** Manage their own profiles and addons.
 
@@ -32,7 +43,7 @@ Some of the possible actions it enables its **enabled** users to do are:
 
 **·** Invite а friend to register.
 
-Some of the possible actions it enables its **admins** to do are:
+Some of the possible actions for **admin** users are:
 
 **·** See a list of users and search them by phone number, username or email.
 
