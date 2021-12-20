@@ -1,9 +1,9 @@
 # Addonis - The better add-ons registry.
-Graduate project of **Hristian Ivanov** and **Ivan Ivanov**.
+Graduate team project (Java Web Application) of **Hristian Ivanov** and **Ivan Ivanov**. 
 
 ## Description
 
-**Addonis is an Addons Registry web application.Allows users to download addons that are appropriate for their IDE, rate addons uploaded by others and upload their own addons.**
+**Addonis is an Addons Registry web application. Allows users to download addons that are appropriate for their IDE, rate addons uploaded by others and upload their own addons.**
 
 Admin username: admin  
 Admin passowrd: aA!12345678  
