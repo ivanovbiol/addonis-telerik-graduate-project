@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 
-import static com.company.addonis.controllers.mvc.AuthentiactionController.PASSWORD_CONFIRMATION_ERROR;
+import static com.company.addonis.controllers.mvc.AuthenticationController.PASSWORD_CONFIRMATION_ERROR;
 
 @Controller
 @RequestMapping("/user")
