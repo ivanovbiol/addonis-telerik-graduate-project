@@ -12,11 +12,11 @@ public class RegisterDto extends LoginDto {
     @NotEmpty(message = PASSWORD_CONFIRMATION_INVALID)
     private String passwordConfirm;
 
-    @NotEmpty(message = "Email can't be empty.")
+    @NotEmpty(message = "Email can not be empty.")
     @Email(message = "Please enter valid email.")
     private String email;
 
-    @Size(min = 10, max = 10, message = "Phone number must have 10 numbers!")
+    @Size(min = 10, max = 10, message = "Phone number must have exactly 10 numbers!")
     private String phoneNumber;
 
     public RegisterDto() {

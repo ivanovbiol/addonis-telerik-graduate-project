@@ -24,23 +24,22 @@ import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/auth")
-public class AuthentiactionController {
+public class AuthenticationController extends BaseAuthenticationController {
 
     public static final String PASSWORD_CONFIRMATION_ERROR = "Password confirmation should match password.";
 
     private final UserMapper userMapper;
     private final UserService userService;
-    private final AuthenticationHelper authenticationHelper;
     private final ConfirmationTokenService confirmationTokenService;
 
     @Autowired
-    public AuthentiactionController(UserMapper userMapper,
+    public AuthenticationController(UserMapper userMapper,
                                     UserService userService,
                                     AuthenticationHelper authenticationHelper,
                                     ConfirmationTokenService confirmationTokenService) {
+        super(authenticationHelper);
         this.userMapper = userMapper;
         this.userService = userService;
-        this.authenticationHelper = authenticationHelper;
         this.confirmationTokenService = confirmationTokenService;
     }
 
@@ -60,7 +59,7 @@ public class AuthentiactionController {
         }
 
         try {
-            authenticationHelper.verifyAuthentication(login.getUsername(), login.getPassword());
+            super.getAuthenticationHelper().verifyAuthentication(login.getUsername(), login.getPassword());
             session.setAttribute("currentUser", login.getUsername());
             return "redirect:/";
         } catch (AuthenticationFailureException e) {
