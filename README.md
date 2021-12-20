@@ -8,12 +8,11 @@ Graduate project of **Hristian Ivanov** and **Ivan Ivanov**.
 Admin username: admin  
 Admin passowrd: aA!12345678  
 
-Enabled user username: user1
-Enabled user passowrd: aA!12345678  
+Enabled user username: user1  
+Enabled user passowrd: aA!12345678    
 
-Disabled user username: user9
-Disabled user passowrd: aA!12345678  
-
+Disabled user username: user9  
+Disabled user passowrd: aA!12345678    
 
 Some of the possible actions for **not registered** users are:
 
