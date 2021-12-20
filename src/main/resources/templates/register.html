@@ -21,7 +21,6 @@
     <link href="../static/assets/css/skin-modes.css"
           th:href="@{/assets/css/skin-modes.css}" rel="stylesheet"/>
 
-
     <!-- Font-awesome  css -->
     <link href="../static/assets/css/icons.css"
           th:href="@{/assets/css/icons.css}" rel="stylesheet"/>
@@ -40,12 +39,6 @@
     <!-- Jquery ui RangeSlider css -->
     <link href="../static/assets/plugins/jquery-uislider/jquery-ui.css"
           th:href="@{/assets/plugins/jquery-uislider/jquery-ui.css}" rel="stylesheet"/>
-
-
-    <!--    &lt;!&ndash; Cookie css &ndash;&gt;-->
-    <!--    <link href="../static/assets/plugins/cookie/cookie.css"-->
-    <!--          th:href="@{/assets/plugins/cookie/cookie.css}" rel="stylesheet"/>-->
-
 
     <!-- Custom scroll bar css-->
     <link href="../static/assets/plugins/scroll-bar/jquery.mCustomScrollbar.css"
@@ -192,13 +185,17 @@
                                 </div>
 
                                 <div class="d-grid">
-                                    <button type="submit" value="Save" class="btn btn-danger">
-                                        Register
-                                    </button>
+                                    <center>
+                                        <button type="submit" value="Save" class="btn btn-danger">
+                                            Register
+                                        </button>
+                                    </center>
 
-                                    <p class="text-dark mb-0">Already have an account?
-                                        <a href="login.html" th:href="@{/auth/login}" class="text-primary ml-1">Sign
-                                            In</a></p>
+                                    <center>
+                                        <p class="text-dark mb-0">Already have an account?
+                                            <a th:href="@{/auth/login}"
+                                               class="text-primary ml-1">Sign In</a></p>
+                                    </center>
                                 </div>
                             </form>
 
@@ -306,104 +303,69 @@
 
 <!-- JQuery js-->
 <script src="../static/assets/js/jquery-3.2.1.min.js"
-        th:src="@{/assets/js/jquery-3.2.1.min.js}"
-></script>
+        th:src="@{/assets/js/jquery-3.2.1.min.js}"></script>
 
 <!-- Bootstrap js -->
 <script src="../static/assets/plugins/bootstrap-4.3.1/js/popper.min.js"
-        th:src="@{/assets/plugins/bootstrap-4.3.1/js/popper.min.js}"
-></script>
+        th:src="@{/assets/plugins/bootstrap-4.3.1/js/popper.min.js}"></script>
 
 <script src="../static/assets/plugins/bootstrap-4.3.1/js/bootstrap.min.js"
-        th:src="@{/assets/plugins/bootstrap-4.3.1/js/bootstrap.min.js}"
-></script>
+        th:src="@{/assets/plugins/bootstrap-4.3.1/js/bootstrap.min.js}"></script>
 
 <!--JQuery IT Itemsrkline js-->
 <script src="../static/assets/js/jquery.sparkline.min.js"
-        th:src="@{/assets/js/jquery.sparkline.min.js}"
-
-></script>
+        th:src="@{/assets/js/jquery.sparkline.min.js}"></script>
 
 <!-- Circle Progress js-->
 <script src="../static/assets/js/circle-progress.min.js"
-        th:src="@{/assets/js/circle-progress.min.js}"
-
-></script>
+        th:src="@{/assets/js/circle-progress.min.js}"></script>
 
 <!-- Star Rating js-->
 <script src="../static/assets/plugins/rating/jquery.rating-stars.js"
-        th:src="@{/assets/plugins/rating/jquery.rating-stars.js}"
-
-></script>
+        th:src="@{/assets/plugins/rating/jquery.rating-stars.js}"></script>
 
 <!--Owl Carousel js -->
 <script src="../static/assets/plugins/owl-carousel/owl.carousel.js"
-        th:src="@{/assets/plugins/owl-carousel/owl.carousel.js}"
-
-></script>
+        th:src="@{/assets/plugins/owl-carousel/owl.carousel.js}"></script>
 
 <!--Horizontal Menu js-->
 <script src="../static/assets/plugins/horizontal-menu/horizontal-menu.js"
-        th:src="@{/assets/plugins/horizontal-menu/horizontal-menu.js}"
-
-></script>
+        th:src="@{/assets/plugins/horizontal-menu/horizontal-menu.js}"></script>
 
 <!--JQuery TouchSwipe js-->
 <script src="../static/assets/js/jquery.touchSwipe.min.js"
-        th:src="@{/assets/js/jquery.touchSwipe.min.js}"
-
-></script>
+        th:src="@{/assets/js/jquery.touchSwipe.min.js}"></script>
 
 <!--Select2 js -->
 <script src="../static/assets/plugins/select2/select2.full.min.js"
-        th:src="@{/assets/plugins/select2/select2.full.min.js}"
+        th:src="@{/assets/plugins/select2/select2.full.min.js}"></script>
 
-></script>
 <script src="../static/assets/js/select2.js"
-        th:src="@{/assets/js/select2.js}"
-
-></script>
-
-<!--&lt;!&ndash; Cookie js &ndash;&gt;-->
-<!--<script src="../static/assets/plugins/cookie/jquery.ihavecookies.js"-->
-<!--        th:src="@{/assets/plugins/cookie/jquery.ihavecookies.js}"-->
-
-<!--&gt;</script>-->
+        th:src="@{/assets/js/select2.js}"></script>
 
 <script src="../static/assets/plugins/cookie/cookie.js"
-        th:src="@{/assets/plugins/cookie/cookie.js}"
-
-></script>
+        th:src="@{/assets/plugins/cookie/cookie.js}"></script>
 
 <!-- Custom scroll bar js-->
 <script src="../static/assets/plugins/scroll-bar/jquery.mCustomScrollbar.js"
-        th:src="@{/assets/plugins/scroll-bar/jquery.mCustomScrollbar.js}"
-
-></script>
+        th:src="@{/assets/plugins/scroll-bar/jquery.mCustomScrollbar.js}"></script>
 
 <!-- sticky js-->
 <script src="../static/assets/js/sticky.js"
-        th:src="@{/assets/js/sticky.js}"
-></script>
+        th:src="@{/assets/js/sticky.js}"></script>
 
 <!-- Image-tooltip js -->
 <script src="../static/assets/plugins/image-tooltip/image-tooltip.js"
-        th:src="@{/assets/plugins/image-tooltip/image-tooltip.js}"
-></script>
+        th:src="@{/assets/plugins/image-tooltip/image-tooltip.js}"></script>
 
 <!-- Swipe js-->
-<script src="../static/assets/js/swipe.js"
-        th:src="@{/assets/js/swipe.js}"
-></script>
+<script src="../static/assets/js/swipe.js" th:src="@{/assets/js/swipe.js}"></script>
 
 <!-- Scripts js-->
-<script src="../static/assets/js/owl-carousel.js"
-        th:src="@{/assets/js/owl-carousel.js}"></script>
+<script src="../static/assets/js/owl-carousel.js" th:src="@{/assets/js/owl-carousel.js}"></script>
 
 <!-- Custom Js-->
-<script src="../static/assets/js/custom.js "
-        th:src="@{/assets/js/custom.js}"
-></script>
+<script src="../static/assets/js/custom.js " th:src="@{/assets/js/custom.js}"></script>
 
 </body>
 </html>
