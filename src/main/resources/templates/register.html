@@ -74,55 +74,12 @@
     <!--Topbar-->
     <div class="header-main">
         <div class="top-bar">
-            <!--            <div class="container">-->
-            <!--                <div class="row">-->
-            <!--                    <div class="col-xl-8 col-lg-8 col-sm-4 col-7">-->
-            <!--                        <div class="top-bar-left d-flex">-->
-            <!--                            <div class="clearfix">-->
-            <!--                                <ul class="socials">-->
-            <!--                                    <li>-->
-            <!--                                        <a class="social-icon text-dark" href="#"><i class="fa fa-facebook"></i></a>-->
-            <!--                                    </li>-->
-            <!--                                    <li>-->
-            <!--                                        <a class="social-icon text-dark" href="#"><i class="fa fa-twitter"></i></a>-->
-            <!--                                    </li>-->
-            <!--                                    <li>-->
-            <!--                                        <a class="social-icon text-dark" href="#"><i class="fa fa-linkedin"></i></a>-->
-            <!--                                    </li>-->
-            <!--                                    <li>-->
-            <!--                                        <a class="social-icon text-dark" href="#"><i class="fa fa-google-plus"></i></a>-->
-            <!--                                    </li>-->
-            <!--                                </ul>-->
-            <!--                            </div>-->
-            <!--                            <div class="clearfix">-->
-            <!--                                <ul class="contact">-->
-            <!--                                    <li class="d-lg-none">-->
-            <!--                                        <a href="#" class="callnumber text-dark"><span><i class="fa fa-phone mr-1"></i>: +425 345 8765</span></a>-->
-            <!--                                    </li>-->
-
-            <!--                                    </li>-->
-            <!--                                </ul>-->
-            <!--                            </div>-->
-            <!--                        </div>-->
-            <!--                    </div>-->
-            <!--                    <div class="col-xl-4 col-lg-4 col-sm-8 col-5">-->
-            <!--                        <div class="top-bar-right">-->
-            <!--                            <ul class="custom">-->
-
-            <!--                            </ul>-->
-            <!--                        </div>-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--            </div>-->
         </div><!--/Topbar-->
 
         <!--Header-->
         <header class="header-search header-logosec p-2 header-icons">
             <div class="container">
                 <div class="d-flex">
-<!--                    <div class="header-search-logo d-none d-lg-block">-->
-<!--&lt;!&ndash;                        <a class="header-logo header-brand-img" href="index.html"></a>&ndash;&gt;-->
-<!--                    </div>-->
                     <div class="d-flex ml-auto header-right-icons header-search-icon">
                         <div class="dropdown d-md-flex notifications">
                         </div>
@@ -135,9 +92,6 @@
         <div class="horizontal-header clearfix ">
             <div class="container">
                 <a id="horizontal-navtoggle" class="animated-arrow"><span></span></a>
-                <span class="smllogo"><img src="../assets/images/brand/logo1.png" width="120" alt="img"/></span>
-                <span class="smllogo-white"><img src="../assets/images/brand/logo.png" width="120" alt="img"/></span>
-                <a href="tel:245-6325-3256" class="callusbtn"><i class="fa fa-phone" aria-hidden="true"></i></a>
             </div>
         </div>
         <!-- /Mobile Header -->
@@ -190,70 +144,65 @@
             </div>
         </div>
     </section><!--/Section-->
+
 </div><!--/Section-->
 <section class="sptb">
     <div class="container customerpage">
         <div class="row">
             <div class="single-page">
                 <div class="col-lg-5 col-xl-4 col-md-6 d-block mx-auto">
-                    <div class="wrapper wrapper2">
+                    <div class="card mb-xl-0">
                         <div class="card-body">
-                            <div class="btn-list d-flex">
-                                <a href="https://www.google.com/gmail/" class="btn btn-google btn-block"><i
-                                        class="fa fa-google fa-1x mr-2"></i> Google</a>
-                                <a href="https://twitter.com/" class="btn btn-twitter"><i
-                                        class="fa fa-twitter fa-1x"></i></a>
-                                <a href="https://www.facebook.com/" class="btn btn-facebook"><i
-                                        class="fa fa-facebook fa-1x"></i></a>
-                            </div>
+
+                            <form th:action="@{/auth/register}" th:object="${register}" method="post">
+                                <div class="form-group">
+                                    <label style="color: red" class="error" th:errors="*{username}">Username
+                                        error</label>
+                                    <label class="form-label text-dark">Username</label>
+                                    <input type="text" class="form-control" th:field="*{username}">
+
+                                </div>
+
+                                <div class="mail">
+                                    <label style="color: red" class="error" th:errors="*{email}">Username error</label>
+                                    <label class="form-label text-dark">Email</label>
+                                    <input type="text" class="form-control" th:field="*{email}" placeholder>
+                                </div>
+
+                                <div class="passwd">
+                                    <label style="color: red" class="error" th:errors="*{password}">Password
+                                        error</label>
+                                    <label class="form-label text-dark">Password</label>
+                                    <input type="password" class="form-control" th:field="*{password}">
+                                </div>
+
+                                <div class="passwd">
+                                    <label style="color: red" class="error" th:errors="*{passwordConfirm}">Password
+                                        confirm
+                                        error </label>
+                                    <label class="form-label text-dark">Confirm password</label>
+                                    <input type="password" class="form-control" th:field="*{passwordConfirm}">
+                                </div>
+
+                                <div class="form-group">
+                                    <label style="color: red" class="error" th:errors="*{phoneNumber}">Username
+                                        error</label>
+                                    <label class="form-label text-dark">Phone number</label>
+                                    <input type="text" class="form-control" th:field="*{phoneNumber}">
+                                </div>
+
+                                <div class="d-grid">
+                                    <button type="submit" value="Save" class="btn btn-danger">
+                                        Register
+                                    </button>
+
+                                    <p class="text-dark mb-0">Already have an account?
+                                        <a href="login.html" th:href="@{/auth/login}" class="text-primary ml-1">Sign
+                                            In</a></p>
+                                </div>
+                            </form>
+
                         </div>
-                        <hr class="divider">
-                        <form action="#" th:action="@{/auth/register}" th:object="${register}" method="post">
-                            <div class="name">
-                                <input type="text" th:field="*{username}">
-                                <label style="color: red" class="error" th:errors="*{username}">Username error
-                                    placeholder </label>
-                                <label>Username</label>
-
-                            </div>
-                            <div class="mail">
-                                <input type="text" th:field="*{email}">
-                                <label style="color: red" class="error" th:errors="*{email}">Username error
-                                    placeholder </label>
-                                <label>Email</label>
-                            </div>
-                            <div class="passwd">
-                                <label style="color: red" class="error" th:errors="*{password}">Password error
-                                    placeholder </label>
-                                <input type="password" th:field="*{password}">
-                                <label>Password</label>
-                            </div>
-                            <div class="passwd">
-                                <label style="color: red" class="error" th:errors="*{passwordConfirm}">Password confirm
-                                    error placeholder </label>
-                                <input type="password" th:field="*{passwordConfirm}">
-                                <label>Confirm password</label>
-                            </div>
-                            <div class="passwd">
-                                <label style="color: red" class="error" th:errors="*{phoneNumber}">Username error
-                                    placeholder </label>
-                                <label>Phone number</label>
-                                <input type="text" th:field="*{phoneNumber}">
-
-                            </div>
-                            <div class="d-grid">
-                                <button type="submit" value="Save" class="btn btn-danger">
-                                    Register
-                                </button>
-
-                                <p class="text-dark mb-0">Already have an account?<a href="login.html"
-                                                                                     th:href="@{/auth/login}"
-                                                                                     class="text-primary ml-1">Sign
-                                    In</a>
-                                </p>
-                            </div>
-                        </form>
-
                     </div>
                 </div>
             </div>
@@ -261,8 +210,6 @@
     </div>
 </section>
 <!--Section-->
-
-<!--Onlinesletter-->
 
 <!--Footer Section-->
 <section>
