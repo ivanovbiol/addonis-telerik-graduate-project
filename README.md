@@ -14,7 +14,7 @@ Enabled user passowrd: aA!12345678
 Disabled user username: user9  
 Disabled user passowrd: aA!12345678    
 
-Some of the possible actions for **not registered** users are:
+Some of the public functionality of the application and possible actions for **non registered** users are:
 
 **·** Login and register.
 
@@ -28,7 +28,7 @@ Some of the possible actions for **not registered** users are:
 
 Some of the possible actions for **registered** users are:
 
-**·** First, they must first verify their accounts via email if they want to have rights and be able to upload addons, otherwise they will have the same privilidges as not registered users.
+**·** First, they must first **verify their accounts via email** if they want to have rights and be able to upload addons, otherwise they will have the same privilidges as not registered users.
 
 **·** Manage their own profiles and addons.
 
