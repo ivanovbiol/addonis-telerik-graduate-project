@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Meta data -->
+    <meta charset="UTF-8">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/images/brand/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/brand/favicon.ico"/>
+
+    <!-- Title -->
+    <title>Addonis</title>
+
+    <!-- Bootstrap css -->
+    <link href="../static/assets/plugins/bootstrap-4.3.1/css/bootstrap.min.css"
+          th:href="@{/assets/plugins/bootstrap-4.3.1/css/bootstrap.min.css}" rel="stylesheet"/>
+
+    <!-- Style css -->
+    <link href="../static/assets/css/style.css"
+          th:href="@{/assets/css/style.css}" rel="stylesheet"/>
+    <link href="../static/assets/css/skin-modes.css"
+          th:href="@{/assets/css/skin-modes.css}" rel="stylesheet"/>
+
+    <!-- Font-awesome  css -->
+    <link href="../static/assets/css/icons.css"
+          th:href="@{/assets/css/icons.css}" rel="stylesheet"/>
+
+    <!--Select2 css -->
+    <link href="../static/assets/plugins/select2/select2.min.css"
+          th:href="@{/assets/plugins/select2/select2.min.css}" rel="stylesheet"/>
+
+    <!-- Owl Theme css-->
+    <link href="../static/assets/plugins/owl-carousel/owl.carousel.css"
+          th:href="@{/assets/plugins/owl-carousel/owl.carousel.css}" rel="stylesheet"/>
+
+    <!-- Custom scroll bar css-->
+    <link href="../static/assets/plugins/scroll-bar/jquery.mCustomScrollbar.css"
+          th:href="@{/assets/plugins/scroll-bar/jquery.mCustomScrollbar.css}" rel="stylesheet"/>
+
+    <!--Image-tooltip css-->
+    <link href="../static/assets/plugins/image-tooltip/image-tooltip.css"
+          th:href="@{/assets/plugins/image-tooltip/image-tooltip.css}" rel="stylesheet"/>
+
+    <!-- Color Skin css -->
+    <link id="theme" type="text/css" media="all"
+          href="../static/assets/color-skins/color7.css"
+          th:href="@{/assets/color-skins/color7.css}" rel="stylesheet"/>
+
+</head>
+
+<body class="headerstyle3">
+
+<!--Loader-->
+<div id="global-loader">
+</div><!--/Loader-->
+
+<!--Section-->
+<div class="cover-image bg-background3" data-image-src="../assets/images/banners/banner4.jpg">
+    <!--Topbar-->
+    <div class="header-main">
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-8 col-lg-8 col-sm-4 col-7">
+                        <div class="top-bar-left d-flex">
+                            <div class="clearfix">
+                                <ul class="socials">
+                                </ul>
+                            </div>
+                            <div class="clearfix">
+                                <ul class="contact">
+                                    <li class="d-lg-none">
+                                        <a href="#" class="callnumber text-dark"><span><i class="fa fa-phone mr-1"></i>: +425 345 8765</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-sm-8 col-5">
+                    </div>
+                </div>
+            </div>
+        </div><!--/Topbar-->
+
+        <!--Header-->
+        <header class="header-search header-logosec p-2 header-icons">
+            <div class="container">
+                <div class="d-flex">
+                    <div class="header-search-logo d-none d-lg-block">
+<!--                        <a class="header-logo header-brand-img" href="index.html"></a>-->
+                    </div>
+                    <div class="d-flex ml-auto header-right-icons header-search-icon">
+                        <div class="dropdown d-md-flex notifications">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow cart-dropdown">
+                                <div class="drop-cart header-dropdown-list">
+                                    <div class="border-bottom">
+                                    </div>
+                                    <div class="border-bottom">
+                                        <div class="d-flex pl-3 pr-4 pt-2 pb-3 align-items-center">
+
+                                        </div>
+                                    </div>
+                                    <div class="border-bottom">
+                                        <div class="d-flex pl-3 pr-4 pt-2 pb-3 align-items-center">
+                                            <div class="">
+                                                <img src="../assets/images/media/pictures/small/03.jpg" class="br-4"
+                                                     alt="img">
+                                            </div>
+                                            <div class="d-flex">
+                                                <div class="pl-3">
+                                                    <span class="fs-16 h4 d-block">Angular Template</span>
+                                                    <div class="fs-13 text-muted">Angular</div>
+                                                </div>
+                                            </div>
+                                            <div class="ml-auto text-center">
+                                                <a href="#" class="text-muted"><i class="fe fe-trash-2 fs-13"></i></a>
+                                                <div class="h5 text-dark mt-1 mb-0">$22</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="border-bottom">
+                                        <div class="d-flex pl-3 pr-4 pt-2 pb-3 align-items-center">
+                                            <div class="">
+                                                <img src="../assets/images/media/pictures/small/04.jpg" class="br-4"
+                                                     alt="img">
+                                            </div>
+                                            <div class="d-flex">
+                                                <div class="pl-3">
+                                                    <span class="fs-16 h4 d-block">PHP Template</span>
+                                                    <div class="fs-13 text-muted">PHP</div>
+                                                </div>
+                                            </div>
+                                            <div class="ml-auto text-center">
+                                                <a href="#" class="text-muted"><i class="fe fe-trash-2 fs-13"></i></a>
+                                                <div class="h5 text-dark mt-1 mb-0">$12</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <div class="d-flex pl-3 pr-4 pt-2 pb-3 align-items-center">
+                                            <div class="">
+                                                <img src="../assets/images/media/pictures/small/05.jpg" class="br-4"
+                                                     alt="img">
+                                            </div>
+                                            <div class="d-flex">
+                                                <div class="pl-3">
+                                                    <span class="fs-16 h4 d-block">PSD Template</span>
+                                                    <div class="fs-13 text-muted">PSD</div>
+                                                </div>
+                                            </div>
+                                            <div class="ml-auto text-center">
+                                                <a href="#" class="text-muted"><i class="fe fe-trash-2 fs-13"></i></a>
+                                                <div class="h5 text-dark mt-1 mb-0">$5</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dropdown-footer">
+                                    <div class="btn-list">
+                                        <a href="cart.html" class="btn btn-primary  ripple mb-lg-0">View Cart</a>
+                                        <a href="checkout.html" class=" btn btn-secondary  ripple mb-lg-0">Checkout</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div><!-- NOTIFICATIONS -->
+                        <div class="dropdown d-md-flex message">
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                <div class="message-menu header-dropdown-list">
+                                    <a class="dropdown-item border-bottom" href="#">
+                                        <div class="d-flex align-items-center">
+                                            <div class="">
+                                                <span class="avatar avatar-md brround align-self-center cover-image"
+                                                      data-image-src="../assets/images/users/male/1.jpg"></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div><!-- MESSAGE-BOX -->
+                            <div class="dropdown d-md-flex profile-1">
+                                <a th:if="${isAuthenticated}" class="nav-link icon text-center" data-toggle="dropdown">
+                                    <i class="fe fe-user"></i>
+                                    <span class="pulse bg-success"></span>
+                                </a>
+                                <div class="top-bar-right">
+                                    <ul class="custom">
+                                        <li th:unless="${isAuthenticated}">
+                                            <a href="register.html"
+                                               th:href="@{/auth/register}"
+                                               class="text-dark"><i class="fa fa-user mr-1"></i>
+                                                <span>Register</span></a>
+                                        </li>
+                                        <li th:unless="${isAuthenticated}">
+                                            <a href="login.html"
+                                               th:href="@{/auth/login}"
+                                               class="text-dark"><i class="fa fa-sign-in mr-1"></i>
+                                                <span>Login</span></a>
+                                        </li>
+                                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                            <div class="drop-heading">
+                                                <div class="text-center">
+                                                    <h5 class="text-dark mb-1"><h2 th:if="${isAuthenticated}"
+                                                                                   th:text="${session.currentUser}"></h2>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div class="dropdown-divider m-0"></div>
+                                            <a class="dropdown-item" href="users/edit-profile.html"
+                                               th:href="@{/user/updateDetails}">
+                                                <i class="dropdown-icon ti-write"></i>Edit Profile
+                                            </a>
+                                            <div class="dropdown-divider mt-0"></div>
+                                            <a class="dropdown-item" th:href="@{/auth/logout}">
+                                                <i class="dropdown-icon ti-unlock"></i> Logout
+                                            </a>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header><!--/Header-->
+
+        <!--Horizontal-main -->
+        <div class="header-style horizontal-main bg-dark-transparent clearfix">
+            <div class="horizontal-mainwrapper container clearfix">
+                <nav class="horizontalMenu clearfix d-md-flex">
+                    <ul class="horizontalMenu-list">
+                        <li aria-haspopup="true"><i class="fe fe-home"></i><a th:href="@{/}">Home </a></li>
+                        <li aria-haspopup="true" th:if="${isAdmin}">
+                            <i class="fe fe-codepen"></i><a th:href="@{/auth/addons/approve}">Approve New Addons</a>
+                        </li>
+                        <li aria-haspopup="true">
+                            <i class="fe fe-codepen"></i><a th:href="@{/addons/all}">All Addons</a>
+                        </li>
+                        <li aria-haspopup="true" th:if="${isAdmin}">
+                            <i class="fe fe-users"></i><a th:href="@{/admins/users/all}">All Users</a></li>
+                        <li aria-haspopup="true" th:if="${isEnabledUser}">
+                            <i class="fe fe-upload"></i> <a th:href="@{/auth/addons/new}"> Upload Addon</a></li>
+                        <li aria-haspopup="true" th:if="${isEnabledUser}">
+                            <i class="fa fa-envelope"></i> <a th:href="@{/user/invite}"> Invite a friend</a></li>
+                        <li aria-haspopup="true"><i class="fe fe-globe"></i><a th:href="@{/contact}"> Contacts</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div><!--/Horizontal-main -->
+
+    <section>
+        <div class="bannerimg">
+            <div class="header-text mb-0">
+                <div class="container">
+                    <div class="text-center text-white">
+                        <h1>Invite a friend</h1>
+                        <ol class="breadcrumb text-center">
+                            <li class="breadcrumb-item"><a th:href="@{/}">Home</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!--/Section-->
+</div><!--/Section-->
+
+<!--Invite a friend-->
+<section class="sptb">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-xl-4 col-md-6 d-block mx-auto">
+                <div class="single-page w-100 p-0">
+                    <div class="wrapper wrapper2">
+
+                        <form id="forgotpsd" class="card-body" th:action="@{/user/inviteFriend}"  method="post">
+                            <h3 class="pb-2">Enter email</h3>
+                            <div class="mail">
+                                <input type="email" name="friendEmail">
+                                <label>Mail</label>
+                            </div>
+                            <button type="submit" value="Save" class="btn btn-danger">
+                                Send
+                            </button>
+                            <div class="text-center text-dark mb-0">
+                                Forget it, <a th:href="@{/}">send me back</a> to home page.
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!--/Invite a friend-->
+
+<!--Footer Section-->
+<section>
+    <footer class="bg-dark text-white">
+        <div class="footer-main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-12">
+                        <h6>About</h6>
+                        <hr class="deep-purple  accent-2 mb-4 mt-0 d-inline-block mx-auto">
+                        <p>Addonis - The better add-ons registry</p>
+                        <ul class="list-unstyled list-inline mt-3">
+                            <li class="list-inline-item">
+                                <a class="btn ripple btn-floating btn-sm mx-1">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn ripple btn-floating btn-sm mx-1">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn ripple btn-floating btn-sm mx-1">
+                                    <i class="fa fa-google-plus"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn ripple btn-floating btn-sm mx-1">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-12">
+                        <h6>Our Services</h6>
+                        <hr class="deep-purple text-primary accent-2 mb-4 mt-0 d-inline-block mx-auto">
+                        <ul class="list-unstyled mb-0">
+                            <li><a href="javascript:;">Our Team</a></li>
+                            <li><a href="javascript:;">Contact US</a></li>
+                            <li><a href="javascript:;">About</a></li>
+                            <li><a href="javascript:;">Services</a></li>
+                            <li><a href="javascript:;">Blog</a></li>
+                            <li><a href="javascript:;">Terms and Services</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-12">
+                        <h6>Contact</h6>
+                        <hr class="deep-purple  text-primary accent-2 mb-4 mt-0 d-inline-block mx-auto">
+                        <ul class="footer-conatct list-unstyled mb-0 contact-footer">
+                            <li>
+                                <a><i class="fa fa-home mr-3 text-white"></i>Hristian Ivanov</a>
+                            </li>
+                            <li>
+                                <a><i class="fa fa-envelope mr-3 text-white"></i> hristian.ivanov100@gmail.com</a>
+                            </li>
+                            <li>
+                                <a><i class="fa fa-phone mr-3 text-white"></i> +359 896 710 557</a>
+                            </li>
+                            <li>
+                                <a><i class="fa fa-home mr-3 text-white"></i>Ivan Ivanov</a>
+                            </li>
+                            <li>
+                                <a><i class="fa fa-envelope mr-3 text-white"></i>ivanov.biol@abv.bg</a>
+                            </li>
+                            <li>
+                                <a><i class="fa fa-phone mr-3 text-white"></i> +359 883 315 999</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="bg-dark text-white-50 p-0">
+            <div class="container">
+                <div class="row d-flex">
+                    <div class="col-lg-12 col-sm-12 mt-3 mb-3 text-center">
+                        Copyright © 2021 <a href="#" class="fs-14 text-primary">Graduate Team Project</a>. Designed by
+                        <a href="#"
+                           class="fs-14 text-primary">
+                            Hristian and Ivan Team </a>All rights reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</section>
+<!--Footer Section-->
+
+<!-- Back to top -->
+<a href="#top" id="back-to-top"><i class="fa fa-long-arrow-up"></i></a>
+
+<!-- JQuery js-->
+<script src="../static/assets/js/jquery-3.2.1.min.js"
+        th:src="@{/assets/js/jquery-3.2.1.min.js}"></script>
+
+<!-- Bootstrap js -->
+<script src="../static/assets/plugins/bootstrap-4.3.1/js/popper.min.js"
+        th:src="@{/assets/plugins/bootstrap-4.3.1/js/popper.min.js}"></script>
+<script src="../static/assets/plugins/bootstrap-4.3.1/js/bootstrap.min.js"
+        th:src="@{/assets/plugins/bootstrap-4.3.1/js/bootstrap.min.js}"></script>
+
+<!--JQuery IT Itemsrkline js-->
+<script src="../static/assets/js/jquery.sparkline.min.js"
+        th:src="@{/assets/js/jquery.sparkline.min.js}"></script>
+
+<!-- Circle Progress js-->
+<script src="../static/assets/js/circle-progress.min.js"
+        th:src="@{/assets/js/circle-progress.min.js}"></script>
+
+<!-- Star Rating js-->
+<script src="../static/assets/plugins/rating/jquery.rating-stars.js"
+        th:src="@{/assets/plugins/rating/jquery.rating-stars.js}"></script>
+
+<!--Horizontal Menu js-->
+<script src="../static/assets/plugins/horizontal-menu/horizontal-menu.js"
+        th:src="@{/assets/plugins/horizontal-menu/horizontal-menu.js}"></script>
+
+<!--Owl Carousel js -->
+<script src="../static/assets/plugins/owl-carousel/owl.carousel.js"
+        th:src="@{/assets/plugins/owl-carousel/owl.carousel.js}"></script>
+
+<!--JQuery TouchSwipe js-->
+<script src="../static/assets/js/jquery.touchSwipe.min.js"
+        th:src="@{/assets/js/jquery.touchSwipe.min.js}"></script>
+
+<!-- sticky js-->
+<script src="../static/assets/js/sticky.js"
+        th:src="@{/assets/js/sticky.js}"></script>
+
+<!-- Image-tooltip js -->
+<script src="../static/assets/plugins/image-tooltip/image-tooltip.js"
+        th:src="@{/assets/plugins/image-tooltip/image-tooltip.js}"></script>
+
+<!--Select2 js -->
+<script src="../static/assets/plugins/select2/select2.full.min.js"
+        th:src="@{/assets/plugins/select2/select2.full.min.js}"></script>
+<script src="../static/assets/js/select2.js"
+        th:src="@{/assets/js/select2.js}"></script>
+
+<!-- Custom scroll bar js-->
+<script src="../static/assets/plugins/scroll-bar/jquery.mCustomScrollbar.js"
+        th:src="@{/assets/plugins/scroll-bar/jquery.mCustomScrollbar.js}"></script>
+
+<!-- Swipe js-->
+<script src="../static/assets/js/swipe.js"
+        th:src="@{/assets/js/swipe.js}"></script>
+
+<!-- Scripts js-->
+<script src="../static/assets/js/owl-carousel.js"
+        th:src="@{/assets/js/owl-carousel.js}"></script>
+
+<!-- Custom Js-->
+<script src="../static/assets/js/custom.js"
+        th:src="@{/assets/js/custom.js}"></script>
+
+</body>
+</html>

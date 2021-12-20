@@ -1,0 +1,677 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <!-- Meta data -->
+    <meta charset="UTF-8">
+
+    <!-- Title -->
+    <title>Addonis</title>
+
+    <!-- Bootstrap css -->
+    <link href="../static/assets/plugins/bootstrap-4.3.1/css/bootstrap.min.css"
+          th:href="@{/assets/plugins/bootstrap-4.3.1/css/bootstrap.min.css}" rel="stylesheet"/>
+
+    <!-- Style css -->
+    <link href="../static/assets/css/style.css"
+          th:href="@{/assets/css/style.css}" rel="stylesheet"/>
+    <link href="../static/assets/css/skin-modes.css"
+          th:href="@{/assets/css/skin-modes.css}" rel="stylesheet"/>
+
+    <!-- Font-awesome  css -->
+    <link href="../static/assets/css/icons.css" th:href="@{/assets/css/icons.css}" rel="stylesheet"/>
+
+    <!--Select2 css -->
+    <link href="../static/assets/plugins/select2/select2.min.css"
+          th:href="@{/assets/plugins/select2/select2.min.css}" rel="stylesheet"/>
+
+    <!-- Owl Theme css-->
+    <link href="../static/assets/plugins/owl-carousel/owl.carousel.css"
+          th:href="@{/assets/plugins/owl-carousel/owl.carousel.css}" rel="stylesheet"/>
+
+    <!-- Custom scroll bar css-->
+    <link href="../static/assets/plugins/scroll-bar/jquery.mCustomScrollbar.css"
+          th:href="@{/assets/plugins/scroll-bar/jquery.mCustomScrollbar.css}" rel="stylesheet"/>
+
+    <!--Image-tooltip css-->
+    <link href="../static/assets/plugins/image-tooltip/image-tooltip.css"
+          th:href="@{/assets/plugins/image-tooltip/image-tooltip.css}" rel="stylesheet"/>
+
+    <!-- Color Skin css -->
+    <link id="theme" rel="stylesheet" type="text/css" media="all"
+          th:href="@{/assets/color-skins/color7.css}" href="../static/assets/color-skins/color7.css"/>
+
+</head>
+
+<body class="headerstyle3">
+
+<!--Loader-->
+<div id="global-loader">
+</div><!--/Loader-->
+
+<!--Section-->
+<div class="cover-image bg-background3" data-image-src="../assets/images/banners/banner4.jpg">
+    <!--Topbar-->
+    <div class="header-main">
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-8 col-lg-8 col-sm-4 col-7">
+                        <div class="top-bar-left d-flex">
+                            <div class="clearfix">
+
+                            </div>
+                            <div class="clearfix">
+                                <ul class="contact">
+                                    <li class="d-lg-none">
+                                        <a href="#" class="callnumber text-dark"><span><i class="fa fa-phone mr-1"></i>: +425 345 8765</span></a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-sm-8 col-5">
+                    </div>
+                </div>
+            </div>
+        </div><!--/Topbar-->
+
+        <!--Header-->
+        <header class="header-search header-logosec p-2 header-icons">
+            <div class="container">
+                <div class="d-flex">
+                    <div class="header-search-logo d-none d-lg-block">
+<!--                        <a class="header-logo header-brand-img" th:href="@{/}" href="index.html"></a>-->
+                    </div>
+                    <div class="d-flex ml-auto header-right-icons header-search-icon">
+                        <div class="dropdown d-md-flex notifications">
+
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow cart-dropdown">
+                                <div class="drop-cart header-dropdown-list">
+                                    <div class="border-bottom">
+                                        <div class="d-flex pl-3 pr-4 pt-2 pb-3 align-items-center">
+                                            <div class="">
+                                                <img src="../assets/images/media/pictures/small/01.jpg" class="br-4"
+                                                     alt="img">
+                                            </div>
+                                            <div class="d-flex">
+                                                <div class="pl-3">
+                                                    <span class="fs-16 h4 d-block">HTML Template</span>
+                                                    <div class="fs-13 text-muted">HTML</div>
+                                                </div>
+                                            </div>
+                                            <div class="ml-auto text-center">
+                                                <a href="#" class="text-muted"><i class="fe fe-trash-2 fs-13"></i></a>
+                                                <div class="h5 text-dark mt-1 mb-0">$24</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="border-bottom">
+                                        <div class="d-flex pl-3 pr-4 pt-2 pb-3 align-items-center">
+                                            <div class="">
+                                                <img src="../assets/images/media/pictures/small/02.jpg" class="br-4"
+                                                     alt="img">
+                                            </div>
+                                            <div class="d-flex">
+                                                <div class="pl-3">
+                                                    <span class="fs-16 h4 d-block">Wordpress Template</span>
+                                                    <div class="fs-13 text-muted">Wordpress</div>
+                                                </div>
+                                            </div>
+                                            <div class="ml-auto text-center">
+                                                <a href="#" class="text-muted"><i class="fe fe-trash-2 fs-13"></i></a>
+                                                <div class="h5 text-dark mt-1 mb-0">$18</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="border-bottom">
+                                        <div class="d-flex pl-3 pr-4 pt-2 pb-3 align-items-center">
+                                            <div class="">
+                                                <img src="../assets/images/media/pictures/small/03.jpg" class="br-4"
+                                                     alt="img">
+                                            </div>
+                                            <div class="d-flex">
+                                                <div class="pl-3">
+                                                    <span class="fs-16 h4 d-block">Angular Template</span>
+                                                    <div class="fs-13 text-muted">Angular</div>
+                                                </div>
+                                            </div>
+                                            <div class="ml-auto text-center">
+                                                <a href="#" class="text-muted"><i class="fe fe-trash-2 fs-13"></i></a>
+                                                <div class="h5 text-dark mt-1 mb-0">$22</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="border-bottom">
+                                        <div class="d-flex pl-3 pr-4 pt-2 pb-3 align-items-center">
+                                            <div class="">
+                                                <img src="../assets/images/media/pictures/small/04.jpg" class="br-4"
+                                                     alt="img">
+                                            </div>
+                                            <div class="d-flex">
+                                                <div class="pl-3">
+                                                    <span class="fs-16 h4 d-block">PHP Template</span>
+                                                    <div class="fs-13 text-muted">PHP</div>
+                                                </div>
+                                            </div>
+                                            <div class="ml-auto text-center">
+                                                <a href="#" class="text-muted"><i class="fe fe-trash-2 fs-13"></i></a>
+                                                <div class="h5 text-dark mt-1 mb-0">$12</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <div class="d-flex pl-3 pr-4 pt-2 pb-3 align-items-center">
+                                            <div class="">
+                                                <img src="../assets/images/media/pictures/small/05.jpg" class="br-4"
+                                                     alt="img">
+                                            </div>
+                                            <div class="d-flex">
+                                                <div class="pl-3">
+                                                    <span class="fs-16 h4 d-block">PSD Template</span>
+                                                    <div class="fs-13 text-muted">PSD</div>
+                                                </div>
+                                            </div>
+                                            <div class="ml-auto text-center">
+                                                <a href="#" class="text-muted"><i class="fe fe-trash-2 fs-13"></i></a>
+                                                <div class="h5 text-dark mt-1 mb-0">$5</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dropdown-footer">
+                                    <div class="btn-list">
+                                        <a href="cart.html" class="btn btn-primary  ripple mb-lg-0">View Cart</a>
+                                        <a href="checkout.html" class=" btn btn-secondary  ripple mb-lg-0">Checkout</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- NOTIFICATIONS -->
+
+                        <div class="dropdown d-md-flex notifications">
+
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                <div class="notifications-menu header-dropdown-list">
+                                    <a href="#" class="dropdown-item d-flex">
+                                        <div>
+                                            <h6 class="mb-1">Commented on your post.</h6>
+                                            <div class="small text-muted">3 hours ago</div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="dropdown-item d-flex border-top">
+                                        <div class="text-secondary fs-18 mr-3 ">
+                                            <i class="fe fe-user text-secondary"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-1">New User Registered.</h6>
+                                            <div class="small text-muted">1 day ago</div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="dropdown-item d-flex border-top">
+                                        <div class="text-success fs-18 mr-3 ">
+                                            <i class="fe fe-thumbs-up text-success"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-1">Someone likes our posts</h6>
+                                            <div class="small text-muted">5 mins ago</div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="dropdown-item d-flex border-top">
+                                        <div class="text-purple fs-18 mr-3 ">
+                                            <i class="fe fe-upload text-purple"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-1">New file has been uploaded</h6>
+                                            <div class="small text-muted">50 sec ago</div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="dropdown-item d-flex border-top">
+                                        <div class="text-danger fs-18 mr-3 ">
+                                            <i class="fe fe-alert-circle text-danger"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-1">System alert</h6>
+                                            <div class="small text-muted">2 days ago</div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="dropdown-item d-flex border-top">
+                                        <div class="text-warning fs-18 mr-3 ">
+                                            <i class="fe fe-server text-warning"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-1">Server Rebooted</h6>
+                                            <div class="small text-muted">45 mins ago</div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="dropdown-item d-flex border-top">
+                                        <div class="text-secondary fs-18 mr-3 ">
+                                            <i class="fe fe-layers text-secondary"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-1">Completed One task</h6>
+                                            <div class="small text-muted">3 mins ago</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="dropdown-footer p-3">
+                                    <a href="#" class="fs-14 text-dark text-center">View all Notification</a>
+                                </div>
+                            </div>
+                        </div><!-- NOTIFICATIONS -->
+                        <div class="dropdown d-md-flex message">
+
+                        </div><!-- MESSAGE-BOX -->
+                        <div class="dropdown d-md-flex profile-1">
+                            <a th:if="${isAuthenticated}" class="nav-link icon text-center" data-toggle="dropdown">
+                                <i class="fe fe-user"></i>
+                                <span class="pulse bg-success"></span>
+                            </a>
+                            <div class="top-bar-right">
+                                <ul class="custom">
+                                    <li th:unless="${isAuthenticated}">
+                                        <a href="register.html"
+                                           th:href="@{/auth/register}"
+                                           class="text-dark"><i class="fa fa-user mr-1"></i>
+                                            <span>Register</span></a>
+                                    </li>
+                                    <li th:unless="${isAuthenticated}">
+                                        <a href="login.html"
+                                           th:href="@{/auth/login}"
+                                           class="text-dark"><i class="fa fa-sign-in mr-1"></i>
+                                            <span>Login</span></a>
+                                    </li>
+                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                        <div class="drop-heading">
+                                            <div class="text-center">
+                                                <h5 class="text-dark mb-1"><h2 th:if="${isAuthenticated}"
+                                                                               th:text="${session.currentUser}"></h2>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown-divider m-0"></div>
+                                        <a class="dropdown-item" href="users/edit-profile.html"
+                                           th:href="@{/user/updateDetails}">
+                                            <i class="dropdown-icon ti-write"></i>Edit Profile
+                                        </a>
+                                        <!--                                        <a class="dropdown-item" href="myads.html">-->
+                                        <!--                                            <i class="dropdown-icon  fe fe-codepen"></i> My Addons-->
+                                        <!--                                        </a>-->
+                                        <div class="dropdown-divider mt-0"></div>
+                                        <a class="dropdown-item" th:href="@{/auth/logout}">
+                                            <i class="dropdown-icon ti-unlock"></i> Logout
+                                        </a>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </header><!--/Header-->
+
+        <!-- Mobile Header -->
+        <div class="horizontal-header clearfix ">
+            <div class="container">
+                <a id="horizontal-navtoggle" class="animated-arrow"><span></span></a>
+                <span class="smllogo"><img src="../assets/images/brand/logo1.png" width="120" alt="img"/></span>
+                <span class="smllogo-white"><img src="../assets/images/brand/logo.png" width="120" alt="img"/></span>
+                <a href="tel:245-6325-3256" class="callusbtn"><i class="fa fa-phone" aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <!-- /Mobile Header -->
+
+        <!--Horizontal-main -->
+        <div class="header-style horizontal-main bg-dark-transparent clearfix">
+            <div class="horizontal-mainwrapper container clearfix">
+                <nav class="horizontalMenu clearfix d-md-flex">
+                    <ul class="horizontalMenu-list">
+                        <li aria-haspopup="true"><i class="fe fe-home"></i><a th:href="@{/}">Home </a></li>
+                        <li aria-haspopup="true" th:if="${isAdmin}">
+                            <i class="fe fe-codepen"></i><a th:href="@{/auth/addons/approve}">Approve New Addons</a>
+                        </li>
+                        <li aria-haspopup="true">
+                            <i class="fe fe-codepen"></i><a th:href="@{/addons/all}">All Addons</a>
+                        </li>
+                        <li aria-haspopup="true" th:if="${isAdmin}">
+                            <i class="fe fe-users"></i><a th:href="@{/admins/users/all}">All Users</a></li>
+                        <li aria-haspopup="true" th:if="${isEnabledUser}">
+                            <i class="fe fe-upload"></i> <a th:href="@{/auth/addons/new}"> Upload Addon</a></li>
+                        <li aria-haspopup="true" th:if="${isEnabledUser}">
+                            <i class="fa fa-envelope"></i> <a th:href="@{/user/invite}"> Invite a friend</a></li>
+                        <li aria-haspopup="true"><i class="fe fe-globe"></i><a th:href="@{/contact}"> Contacts</a>
+                        </li>
+                    </ul>
+                    <ul class="mb-0">
+                        <li aria-haspopup="true" class="d-none d-lg-block ">
+                            <span><a class="btn ripple  btn-danger ad-post" href="register.html"><i
+                                    class="fa fa-cart-plus mr-2 text-white fs-16"></i>Become a Seller</a></span>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div><!--/Horizontal-main -->
+
+    <section>
+        <div class="bannerimg">
+            <div class="header-text mb-0">
+                <div class="container">
+                    <div class="text-center text-white">
+                        <h1>Contact</h1>
+                        <ol class="breadcrumb text-center">
+                            <li class="breadcrumb-item"><a href="#" th:href="@{/}">Home</a></li>
+                            <li class="breadcrumb-item active text-white" aria-current="page">Contact</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!--/Section-->
+
+</div><!--/Section-->
+
+<!--Contact-->
+<section class="sptb">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-xl-6  col-md-12">
+                <div class="card-body pt-0">
+                    <h3 class="mb-6 fs-20">Get In Touch With Us</h3>
+                    <div class="conatct-list">
+
+                        <!--Hristian-->
+                        <div class="media">
+                            <div class="media-icon bg-primary">
+                                <i class="fe fe-phone"></i>
+                            </div>
+                            <div class="media-body">
+                                <h5 class="mt-2 font-weight-normal">Hristian Ivanov</h5>
+                                <h6 class="mb-0 mt-3 fs-18"> +359 896 710 557</h6>
+                                <!--                                <small class="text-muted fs-13">Best Java Developers!</small>-->
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-icon bg-info">
+                                <i class="fe fe-mail"></i>
+                            </div>
+                            <div class="media-body">
+                                <h5 class="mt-2 font-weight-normal">E-Mail</h5>
+                                <h6 class="mb-0 mt-3 fs-18">hristian.ivanov100@gmail.com</h6>
+                                <!--                                <small class="text-muted fs-13">Support us!</small>-->
+                            </div>
+                        </div>
+
+                        <!--Ivan-->
+                        <div class="media">
+                            <div class="media-icon bg-primary">
+                                <i class="fe fe-phone"></i>
+                            </div>
+                            <div class="media-body">
+                                <h5 class="mt-2 font-weight-normal">Ivan Ivanov</h5>
+                                <h6 class="mb-0 mt-3 fs-18"> +359 883 315 999</h6>
+                                <!--                                <small class="text-muted fs-13">Best Java Developers!</small>-->
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-icon bg-info">
+                                <i class="fe fe-mail"></i>
+                            </div>
+                            <div class="media-body">
+                                <h5 class="mt-2 font-weight-normal">E-Mail</h5>
+                                <h6 class="mb-0 mt-3 fs-18">ivanov.biol@abv.bg/ivanov.biol@gmail.com</h6>
+                                <!--                                <small class="text-muted fs-13">Support us!</small>-->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-xl-6 col-md-12">
+                <div class="card mb-0">
+                    <div class="card-header">
+                        <h3 class="card-title">Contact Us</h3>
+                    </div>
+
+                    <!--Original Form-->
+                    <!--                    <div class="card-body">-->
+                    <!--                        <div class="form-group">-->
+                    <!--                            <input type="text" class="form-control" id="name1" placeholder="Your Name">-->
+                    <!--                        </div>-->
+                    <!--                        <div class="form-group">-->
+                    <!--                            <input type="email" class="form-control" id="email" placeholder="Email address">-->
+                    <!--                        </div>-->
+                    <!--                        <div class="form-group">-->
+                    <!--                            <input type="email" class="form-control" id="subject" placeholder="Subject">-->
+                    <!--                        </div>-->
+                    <!--                        <div class="form-group">-->
+                    <!--                            <textarea class="form-control" name="example-textarea-input" rows="6"-->
+                    <!--                                      placeholder="Message"></textarea>-->
+                    <!--                        </div>-->
+                    <!--                        <div class="text-left">-->
+                    <!--                            <a class="btn ripple  btn-primary">Send Message</a>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+
+                    <!--Custom Form-->
+                    <div class="card-body">
+
+                        <form action="#" th:action="@{/contactUs}" th:object="${contactUs}" method="post">
+                            <div class="form-group">
+                                <label style="color: red" class="error" th:errors="*{yourName}"
+                                >Your Name error placeholder </label>
+                                <label>Your name</label>
+                                <input type="text" class="form-control" id="name1" placeholder="Your Name"
+                                       th:field="*{yourName}">
+                            </div>
+
+                            <div class="form-group">
+                                <label style="color: red" class="error" th:errors="*{yourEmailAddress}"
+                                >Email address error placeholder </label>
+                                <label>Email address</label>
+                                <input type="email" class="form-control" id="email" placeholder="Email address"
+                                       th:field="*{yourEmailAddress}">
+
+                            </div>
+
+                            <div class="form-group">
+                                <label style="color: red" class="error" th:errors="*{subject}"
+                                >Subject error placeholder </label>
+                                <label>Subject</label>
+                                <input type="text" class="form-control" id="subject" placeholder="Subject"
+                                       th:field="*{subject}">
+                            </div>
+
+                            <div class="form-group">
+                                <label style="color: red" class="error" th:errors="*{text}">Text error
+                                    placeholder </label>
+                                <label>Text</label>
+                                <textarea class="form-control" name="example-textarea-input" rows="6"
+                                          placeholder="Message" th:field="*{text}"></textarea>
+                            </div>
+
+                            <div class="text-left">
+                                <button type="submit" value="Save" class="btn ripple btn-primary">Send Us Email
+                                </button>
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Conatct -->
+
+<!--Map-->
+<div>
+    <div class="map1 mb-0">
+        <div class="map-header-layer h-400" id="map2"></div>
+    </div>
+</div><!--/Map-->
+
+<!--Footer Section-->
+<section>
+    <footer class="bg-dark text-white">
+        <div class="footer-main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-12">
+                        <h6>About</h6>
+                        <hr class="deep-purple  accent-2 mb-4 mt-0 d-inline-block mx-auto">
+                        <p>Addonis - The better add-ons registry</p>
+                        <ul class="list-unstyled list-inline mt-3">
+                            <li class="list-inline-item">
+                                <a class="btn ripple btn-floating btn-sm mx-1">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn ripple btn-floating btn-sm mx-1">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn ripple btn-floating btn-sm mx-1">
+                                    <i class="fa fa-google-plus"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn ripple btn-floating btn-sm mx-1">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-12">
+                        <h6>Our Services</h6>
+                        <hr class="deep-purple text-primary accent-2 mb-4 mt-0 d-inline-block mx-auto">
+                        <ul class="list-unstyled mb-0">
+                            <li><a href="javascript:;">Our Team</a></li>
+                            <li><a href="javascript:;">Contact US</a></li>
+                            <li><a href="javascript:;">About</a></li>
+                            <li><a href="javascript:;">Services</a></li>
+                            <li><a href="javascript:;">Blog</a></li>
+                            <li><a href="javascript:;">Terms and Services</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-12">
+                        <h6>Contact</h6>
+                        <hr class="deep-purple  text-primary accent-2 mb-4 mt-0 d-inline-block mx-auto">
+                        <ul class="footer-conatct list-unstyled mb-0 contact-footer">
+                            <li>
+                                <a><i class="fa fa-home mr-3 text-white"></i>Hristian Ivanov</a>
+                            </li>
+                            <li>
+                                <a><i class="fa fa-envelope mr-3 text-white"></i> hristian.ivanov100@gmail.com</a>
+                            </li>
+                            <li>
+                                <a><i class="fa fa-phone mr-3 text-white"></i> +359 896 710 557</a>
+                            </li>
+                            <li>
+                                <a><i class="fa fa-home mr-3 text-white"></i>Ivan Ivanov</a>
+                            </li>
+                            <li>
+                                <a><i class="fa fa-envelope mr-3 text-white"></i>ivanov.biol@abv.bg</a>
+                            </li>
+                            <li>
+                                <a><i class="fa fa-phone mr-3 text-white"></i> +359 883 315 999</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="bg-dark text-white-50 p-0">
+            <div class="container">
+                <div class="row d-flex">
+                    <div class="col-lg-12 col-sm-12 mt-3 mb-3 text-center">
+                        Copyright © 2021 <a href="#" class="fs-14 text-primary">Graduate Team Project</a>. Designed by
+                        <a href="#"
+                           class="fs-14 text-primary">
+                            Hristian and Ivan Team </a>All rights reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</section>
+<!--Footer Section-->
+
+<!-- Back to top -->
+<a href="#top" id="back-to-top"><i class="fa fa-long-arrow-up"></i></a>
+
+<!-- JQuery js-->
+<script src="../static/assets/js/jquery-3.2.1.min.js"
+        th:src="@{/assets/js/jquery-3.2.1.min.js}"></script>
+
+<!-- Bootstrap js -->
+<script src="../static/assets/plugins/bootstrap-4.3.1/js/popper.min.js"
+        th:src="@{/assets/plugins/bootstrap-4.3.1/js/popper.min.js}"></script>
+<script src="../static/assets/plugins/bootstrap-4.3.1/js/bootstrap.min.js"
+        th:src="@{/assets/plugins/bootstrap-4.3.1/js/bootstrap.min.js}"></script>
+
+<!--JQuery IT Itemsrkline js-->
+<script src="../static/assets/js/jquery.sparkline.min.js"
+        th:src="@{/assets/js/jquery.sparkline.min.js}"></script>
+
+<!-- Circle Progress js-->
+<script src="../static/assets/js/circle-progress.min.js"
+        th:src="@{/assets/js/circle-progress.min.js}"></script>
+
+<!-- Star Rating js-->
+<script src="../static/assets/plugins/rating/jquery.rating-stars.js"
+        th:src="@{/assets/plugins/rating/jquery.rating-stars.js}"></script>
+
+<!--Owl Carousel js -->
+<script src="../static/assets/plugins/owl-carousel/owl.carousel.js"
+        th:src="@{/assets/plugins/owl-carousel/owl.carousel.js}"></script>
+
+<!-- Google Maps js-->
+<script src="https://maps.google.com/maps/api/js?key=AIzaSyCW16SmpzDNLsrP-npQii6_8vBu_EJvEjA"></script>
+<script src="../static/assets/plugins/maps-google/jquery.googlemap.js"
+        th:src="@{/assets/plugins/maps-google/jquery.googlemap.js}"></script>
+<script src="../static/assets/plugins/maps-google/map.js"
+        th:src="@{/assets/plugins/maps-google/map.js}"></script>
+
+<!--Horizontal Menu js-->
+<script src="../static/assets/plugins/horizontal-menu/horizontal-menu.js"
+        th:src="@{/assets/plugins/horizontal-menu/horizontal-menu.js}"></script>
+
+<!--Select2 js -->
+<script src="../static/assets/plugins/select2/select2.full.min.js"
+        th:src="@{/assets/plugins/select2/select2.full.min.js}"></script>
+<script src="../static/assets/js/select2.js" th:src="@{/assets/js/select2.js}"></script>
+
+<!--JQuery TouchSwipe js-->
+<script src="../static/assets/js/jquery.touchSwipe.min.js"
+        th:src="@{/assets/js/jquery.touchSwipe.min.js}"></script>
+
+<!-- Custom scroll bar js-->
+<script src="../static/assets/plugins/scroll-bar/jquery.mCustomScrollbar.js"
+        th:src="@{/assets/plugins/scroll-bar/jquery.mCustomScrollbar.js}"></script>
+
+<!-- sticky js-->
+<script src="../static/assets/js/sticky.js" th:src="@{/assets/js/sticky.js}"></script>
+
+<!-- Image-tooltip js -->
+<script src="../static/assets/plugins/image-tooltip/image-tooltip.js"
+        th:src="@{/assets/plugins/image-tooltip/image-tooltip.js}"></script>
+
+<!-- Swipe js-->
+<script src="../static/assets/js/swipe.js" th:src="@{/assets/js/swipe.js}"></script>
+
+<!-- Scripts js-->
+<script src="../static/assets/js/owl-carousel.js" th:src="@{/assets/js/owl-carousel.js}"></script>
+
+<!-- Custom Js-->
+<script src="../static/assets/js/custom.js" th:src="@{/assets/js/custom.js}"></script>
+
+</body>
+</html>

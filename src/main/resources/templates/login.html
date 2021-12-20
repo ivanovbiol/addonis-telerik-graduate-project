@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Meta data -->
+    <meta charset="UTF-8">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../static/assets/images/brand/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" type="image/x-icon" href="../static/assets/images/brand/favicon.ico"/>
+
+    <!-- Title -->
+    <title>Addonis</title>
+
+    <!-- Bootstrap css -->
+    <link href="../static/assets/plugins/bootstrap-4.3.1/css/bootstrap.min.css"
+          th:href="@{/assets/plugins/bootstrap-4.3.1/css/bootstrap.min.css}" rel="stylesheet"/>
+
+    <!-- Style css -->
+    <link href="../static/assets/css/style.css"
+          th:href="@{/assets/css/style.css}" rel="stylesheet"/>
+    <link href="../static/assets/css/skin-modes.css"
+          th:href="@{/assets/css/skin-modes.css}" rel="stylesheet"/>
+
+
+    <!-- Font-awesome  css -->
+    <link href="../static/assets/css/icons.css"
+          th:href="@{/assets/css/icons.css}" rel="stylesheet"/>
+
+
+    <!-- Owl Theme css-->
+    <link href="../static/assets/plugins/owl-carousel/owl.carousel.css"
+          th:href="@{/assets/plugins/owl-carousel/owl.carousel.css}" rel="stylesheet"/>
+
+
+    <!--Select2 css -->
+    <link href="../static/assets/plugins/select2/select2.min.css"
+          th:href="@{/assets/plugins/select2/select2.min.css}" rel="stylesheet"/>
+
+
+    <!-- Jquery ui RangeSlider css -->
+    <link href="../static/assets/plugins/jquery-uislider/jquery-ui.css"
+          th:href="@{/assets/plugins/jquery-uislider/jquery-ui.css}" rel="stylesheet"/>
+
+    <!-- Custom scroll bar css-->
+    <link href="../static/assets/plugins/scroll-bar/jquery.mCustomScrollbar.css"
+          th:href="@{/assets/plugins/scroll-bar/jquery.mCustomScrollbar.css}" rel="stylesheet"/>
+
+
+    <!--Image-tooltip css-->
+    <link href="../static/assets/plugins/image-tooltip/image-tooltip.css"
+          th:href="@{/assets/plugins/image-tooltip/image-tooltip.css}" rel="stylesheet"/>
+
+    <!-- Color Skin css -->
+    <link id="theme" rel="stylesheet" type="text/css" media="all"
+          th:href="@{/assets/color-skins/color7.css}"
+          href="../static/assets/color-skins/color6.css"/>
+
+</head>
+
+<body class="headerstyle3">
+
+<!--Loader-->
+<div id="global-loader">
+</div><!--/Loader-->
+
+<!--Section-->
+<div class="cover-image bg-background3" data-image-src="../assets/images/banners/banner4.jpg">
+    <!--Topbar-->
+    <div class="header-main">
+        <div class="top-bar">
+
+        </div><!--/Topbar-->
+
+        <!--Header-->
+        <header class="header-search header-logosec p-2 header-icons">
+            <div class="container">
+                <div class="d-flex">
+<!--                    <div class="header-search-logo d-none d-lg-block">-->
+<!--&lt;!&ndash;                        <a class="header-logo header-brand-img" href="index.html"></a>&ndash;&gt;-->
+<!--                    </div>-->
+                    <div class="d-flex ml-auto header-right-icons header-search-icon">
+                        <div class="dropdown d-md-flex notifications">
+                        </div>
+                    </div>
+        </header><!--/Header-->
+
+        <!-- Mobile Header -->
+        <div class="horizontal-header clearfix ">
+            <div class="container">
+                <a id="horizontal-navtoggle" class="animated-arrow"><span></span></a>
+                <span class="smllogo"><img src="../assets/images/brand/logo1.png" width="120" alt="img"/></span>
+                <span class="smllogo-white"><img src="../assets/images/brand/logo.png" width="120" alt="img"/></span>
+                <a href="tel:245-6325-3256" class="callusbtn"><i class="fa fa-phone" aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <!-- /Mobile Header -->
+
+        <!--Horizontal-main -->
+        <div class="header-style horizontal-main bg-dark-transparent clearfix">
+            <div class="horizontal-mainwrapper container clearfix">
+                <div class="header-style horizontal-main bg-dark-transparent clearfix">
+                    <div class="horizontal-mainwrapper container clearfix">
+                        <nav class="horizontalMenu clearfix d-md-flex">
+                            <ul class="horizontalMenu-list">
+                                <li aria-haspopup="true"><i class="fe fe-home"></i><a th:href="@{/}">Home </a></li>
+                                <li aria-haspopup="true" th:if="${isAdmin}">
+                                    <i class="fe fe-codepen"></i><a th:href="@{/auth/addons/approve}">Approve New Addons</a>
+                                </li>
+                                <li aria-haspopup="true">
+                                    <i class="fe fe-codepen"></i><a th:href="@{/addons/all}">All Addons</a>
+                                </li>
+                                <li aria-haspopup="true" th:if="${isAdmin}">
+                                    <i class="fe fe-users"></i><a th:href="@{/admins/users/all}">All Users</a></li>
+                                <li aria-haspopup="true" th:if="${isEnabledUser}">
+                                    <i class="fe fe-upload"></i> <a th:href="@{/auth/addons/new}"> Upload Addon</a></li>
+                                <li aria-haspopup="true" th:if="${isEnabledUser}">
+                                    <i class="fa fa-envelope"></i> <a th:href="@{/user/invite}"> Invite a friend</a></li>
+                                <li aria-haspopup="true"><i class="fe fe-globe"></i><a th:href="@{/contact}"> Contacts</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--/Horizontal-main -->
+
+    <section>
+        <div class="bannerimg">
+            <div class="header-text mb-0">
+                <div class="container">
+                    <div class="text-center text-white">
+                        <h1>Login</h1>
+                        <ol class="breadcrumb text-center">
+                            <li class="breadcrumb-item"><a href="#" th:href="@{/}">Home</a></li>
+                            <li class="breadcrumb-item active text-white" aria-current="page">Login</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!--/Section-->
+</div><!--/Section-->
+
+<!--Login-Section-->
+<section class="sptb">
+    <div class="container customerpage">
+        <div class="row">
+            <div class="single-page">
+                <div class="col-lg-5 col-xl-4 col-md-6 d-block mx-auto">
+                    <div class="wrapper wrapper2">
+                        <div class="card-body pb-4">
+                            <div class="btn-list d-flex">
+                                <a href="https://www.google.com/gmail/" class="btn btn-google btn-block"><i
+                                        class="fa fa-google fa-1x mr-2"></i> Google</a>
+                                <a href="https://twitter.com/" class="btn btn-twitter"><i
+                                        class="fa fa-twitter fa-1x"></i></a>
+                                <a href="https://www.facebook.com/" class="btn btn-facebook"><i
+                                        class="fa fa-facebook fa-1x"></i></a>
+                            </div>
+                        </div>
+                        <hr class="divider">
+                        <form action="#" th:action="@{/auth/login}" th:object="${login}" method="post">
+                            <div class="username">
+                                <input type="text" th:field="*{username}" name="username">
+                                <label>Username</label>
+                                <label style="color: red" class="error" th:errors="*{username}">Username error
+                                    placeholder </label>
+                            </div>
+                            <div class="passwd mb-0">
+                                <input type="password" th:field="*{password}">
+                                <label>Password</label>
+                                <label style="color: red" class="error" th:errors="*{password}">Password error
+                                </label>
+                            </div>
+                            <div class="form-group pt-3 rememberme-style">
+                                <label class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input">
+                                    <span class="custom-control-label text-dark">Remember me</span>
+                                </label>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" value="Save" class="btn btn-danger">
+                                    Login
+                                </button>
+                            </div>
+                            <p class="mb-2"><a href="forgot.html">Forgot Password</a></p>
+                            <p class="text-dark mb-0">Don't have account?<a th:href="@{/auth/register}"
+                                                                            class="text-primary ml-1">Create free
+                                account</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!--/Login-Section-->
+
+<!--Footer Section-->
+<section>
+    <footer class="bg-dark text-white">
+        <div class="footer-main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-12">
+                        <h6>About</h6>
+                        <hr class="deep-purple  accent-2 mb-4 mt-0 d-inline-block mx-auto">
+                        <p>Addonis - The better add-ons registry</p>
+                        <ul class="list-unstyled list-inline mt-3">
+                            <li class="list-inline-item">
+                                <a class="btn ripple btn-floating btn-sm mx-1">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn ripple btn-floating btn-sm mx-1">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn ripple btn-floating btn-sm mx-1">
+                                    <i class="fa fa-google-plus"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn ripple btn-floating btn-sm mx-1">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-12">
+                        <h6>Our Services</h6>
+                        <hr class="deep-purple text-primary accent-2 mb-4 mt-0 d-inline-block mx-auto">
+                        <ul class="list-unstyled mb-0">
+                            <li><a href="javascript:;">Our Team</a></li>
+                            <li><a href="javascript:;">Contact US</a></li>
+                            <li><a href="javascript:;">About</a></li>
+                            <li><a href="javascript:;">Services</a></li>
+                            <li><a href="javascript:;">Blog</a></li>
+                            <li><a href="javascript:;">Terms and Services</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-12">
+                        <h6>Contact</h6>
+                        <hr class="deep-purple  text-primary accent-2 mb-4 mt-0 d-inline-block mx-auto">
+                        <ul class="footer-conatct list-unstyled mb-0 contact-footer">
+                            <li>
+                                <a><i class="fa fa-home mr-3 text-white"></i>Hristian Ivanov</a>
+                            </li>
+                            <li>
+                                <a><i class="fa fa-envelope mr-3 text-white"></i> hristian.ivanov100@gmail.com</a>
+                            </li>
+                            <li>
+                                <a><i class="fa fa-phone mr-3 text-white"></i> +359 896 710 557</a>
+                            </li>
+                            <li>
+                                <a><i class="fa fa-home mr-3 text-white"></i>Ivan Ivanov</a>
+                            </li>
+                            <li>
+                                <a><i class="fa fa-envelope mr-3 text-white"></i>ivanov.biol@abv.bg</a>
+                            </li>
+                            <li>
+                                <a><i class="fa fa-phone mr-3 text-white"></i> +359 883 315 999</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="bg-dark text-white-50 p-0">
+            <div class="container">
+                <div class="row d-flex">
+                    <div class="col-lg-12 col-sm-12 mt-3 mb-3 text-center">
+                        Copyright © 2021 <a href="#" class="fs-14 text-primary">Graduate Team Project</a>. Designed by
+                        <a href="#"
+                           class="fs-14 text-primary">
+                            Hristian and Ivan Team </a>All rights reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</section>
+<!--Footer Section-->
+
+<!-- Back to top -->
+<a href="#top" id="back-to-top"><i class="fa fa-long-arrow-up"></i></a>
+
+<!-- JQuery js-->
+<!-- JQuery js-->
+<script src="../static/assets/js/jquery-3.2.1.min.js"
+        th:src="@{/assets/js/jquery-3.2.1.min.js}"
+></script>
+
+<!-- Bootstrap js -->
+<script src="../static/assets/plugins/bootstrap-4.3.1/js/popper.min.js"
+        th:src="@{/assets/plugins/bootstrap-4.3.1/js/popper.min.js}"
+></script>
+
+<script src="../static/assets/plugins/bootstrap-4.3.1/js/bootstrap.min.js"
+        th:src="@{/assets/plugins/bootstrap-4.3.1/js/bootstrap.min.js}"
+></script>
+
+<!--JQuery IT Itemsrkline js-->
+<script src="../static/assets/js/jquery.sparkline.min.js"
+        th:src="@{/assets/js/jquery.sparkline.min.js}"
+
+></script>
+
+<!-- Circle Progress js-->
+<script src="../static/assets/js/circle-progress.min.js"
+        th:src="@{/assets/js/circle-progress.min.js}"
+
+></script>
+
+<!-- Star Rating js-->
+<script src="../static/assets/plugins/rating/jquery.rating-stars.js"
+        th:src="@{/assets/plugins/rating/jquery.rating-stars.js}"
+
+></script>
+
+<!--Owl Carousel js -->
+<script src="../static/assets/plugins/owl-carousel/owl.carousel.js"
+        th:src="@{/assets/plugins/owl-carousel/owl.carousel.js}"
+
+></script>
+
+<!--Horizontal Menu js-->
+<script src="../static/assets/plugins/horizontal-menu/horizontal-menu.js"
+        th:src="@{/assets/plugins/horizontal-menu/horizontal-menu.js}"
+
+></script>
+
+<!--JQuery TouchSwipe js-->
+<script src="../static/assets/js/jquery.touchSwipe.min.js"
+        th:src="@{/assets/js/jquery.touchSwipe.min.js}"
+
+></script>
+
+<!--Select2 js -->
+<script src="../static/assets/plugins/select2/select2.full.min.js"
+        th:src="@{/assets/plugins/select2/select2.full.min.js}"
+
+></script>
+<script src="../static/assets/js/select2.js"
+        th:src="@{/assets/js/select2.js}"
+
+></script>
+
+<!-- Custom scroll bar js-->
+<script src="../static/assets/plugins/scroll-bar/jquery.mCustomScrollbar.js"
+        th:src="@{/assets/plugins/scroll-bar/jquery.mCustomScrollbar.js}"
+
+></script>
+
+<!-- sticky js-->
+<script src="../static/assets/js/sticky.js"
+        th:src="@{/assets/js/sticky.js}"
+></script>
+
+<!-- Image-tooltip js -->
+<script src="../static/assets/plugins/image-tooltip/image-tooltip.js"
+        th:src="@{/assets/plugins/image-tooltip/image-tooltip.js}"
+></script>
+
+<!-- Swipe js-->
+<script src="../static/assets/js/swipe.js"
+        th:src="@{/assets/js/swipe.js}"
+></script>
+
+<!-- Scripts js-->
+<script src="../static/assets/js/owl-carousel.js"
+        th:src="@{/assets/js/owl-carousel.js}"></script>
+
+<!-- Custom Js-->
+<script src="../static/assets/js/custom.js "
+        th:src="@{/assets/js/custom.js}"
+></script>
+
+</body>
+</html>
