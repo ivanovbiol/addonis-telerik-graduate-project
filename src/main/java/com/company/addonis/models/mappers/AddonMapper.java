@@ -65,7 +65,7 @@ public class AddonMapper {
         addon.setOriginLink(addonDto.getOriginLink());
         addon.setStatus(statusService.getById(1));
         addon.setUploadDate(LocalDate.now());
-        addon.setGithubData(gitHubDataService.getDataFromGitHubAndCreate(addon));
+        //addon.setGithubData(gitHubDataService.getDataFromGitHubAndCreate(addon));
     }
 
     public AddonDto toDto(Addon addon) {
