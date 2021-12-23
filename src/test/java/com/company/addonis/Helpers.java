@@ -7,6 +7,8 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.Set;
 
+import static com.company.addonis.services.EmailSenderServiceImpl.SENDER_MAIL;
+
 public class Helpers {
 
     public static IDE createMockIDE() {
@@ -28,7 +30,7 @@ public class Helpers {
         mockUser.setId(1);
         mockUser.setUsername("username");
         mockUser.setPassword("password");
-        mockUser.setEmail("mail@gmail.com");
+        mockUser.setEmail(SENDER_MAIL);
         mockUser.setPhoneNumber("0888888888");
         mockUser.setPhoto("Sample String".getBytes());
         mockUser.setEnabled(true);
