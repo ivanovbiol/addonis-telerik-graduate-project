@@ -3,11 +3,16 @@ package com.company.addonis.models.dtos;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 public class UserDetailsUpdateDto {
 
-    @Email(message = "Please enter valid email.")
+    @NotBlank(message = "Email should not be blank!")
+    @Email(message = "Please enter valid email!")
+    @Pattern(regexp = ".+(@gmail\\.com|@abv\\.bg)",
+            message = "Email options restricted to @gmail.com or @abv.bg.")
     private String email;
 
     @Size(min = 10, max = 10, message = "Phone number must have 10 numbers!")

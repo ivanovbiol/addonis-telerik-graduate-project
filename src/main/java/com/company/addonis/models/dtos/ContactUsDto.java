@@ -12,7 +12,6 @@ public class ContactUsDto {
 
     @NotBlank(message = "Your email can not be blank.")
     @Size(min = 5, max = 25, message = "Your email should be between 5 and 25 symbols.")
-    @Pattern(regexp = ".+@.+\\..+", message = "Please enter valid email (example - name@mail.com/name@mail.com)")
     private String yourEmailAddress;
 
     @NotBlank(message = "Subject can not be blank.")
