@@ -31,7 +31,7 @@ import static com.company.addonis.utils.ObjectFieldsSetter.setBinaryData;
 import static com.company.addonis.utils.ObjectFieldsSetter.setRating;
 
 @Controller
-@RequestMapping("/auth/addons")
+@RequestMapping("/auth/addon")
 public class AddonMvcController extends BaseAuthenticationController {
 
     private final AddonService addonService;
@@ -55,13 +55,13 @@ public class AddonMvcController extends BaseAuthenticationController {
         this.statusService = statusService;
     }
 
-    @GetMapping("/new")
+    @GetMapping("/create")
     public String create(HttpSession session, Model model) {
         model.addAttribute("addon", new AddonDto());
         return "addons/addon-create";
     }
 
-    @PostMapping("/new")
+    @PostMapping("/create")
     public String createAddon(HttpSession session,
                               Model model,
                               @Valid @ModelAttribute("addon") AddonDto addonDto,
@@ -148,20 +148,20 @@ public class AddonMvcController extends BaseAuthenticationController {
         }
     }
 
-    @GetMapping("/approve/{id}")
+    @GetMapping("/{id}/approve")
     public String approveAddon(@PathVariable int id, Model model) {
         try {
             Addon addon = addonService.getById(id);
             addon.setStatus(statusService.getById(2));
             addonService.update(addon);
-            return "redirect:/auth/addons/approve";
+            return "redirect:/auth/addon/approve";
         } catch (EntityNotFoundException e) {
             model.addAttribute("error", e.getMessage());
             return "error";
         }
     }
 
-    @GetMapping("/rate/{id}")
+    @GetMapping("/{id}/rate")
     public String rateAddon(@PathVariable int id,
                             Model model, @RequestParam("rate") int rate) {
         try {
