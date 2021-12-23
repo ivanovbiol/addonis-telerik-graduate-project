@@ -199,14 +199,13 @@
                                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                             <div class="drop-heading">
                                                 <div class="text-center">
-                                                    <h5 class="text-dark mb-1"><h2 th:if="${isAuthenticated}"
-                                                                                   th:text="${session.currentUser}"></h2>
-                                                    </h5>
+                                                    <h5 class="text-dark mb-1">
+                                                        <h2 th:if="${isAuthenticated}"
+                                                            th:text="${session.currentUser}"></h2></h5>
                                                 </div>
                                             </div>
                                             <div class="dropdown-divider m-0"></div>
-                                            <a class="dropdown-item" href="users/edit-profile.html"
-                                               th:href="@{/user/updateDetails}">
+                                            <a class="dropdown-item" th:href="@{/auth/user/update}">
                                                 <i class="dropdown-icon ti-write"></i>Edit Profile
                                             </a>
                                             <div class="dropdown-divider mt-0"></div>
@@ -238,24 +237,26 @@
                     <ul class="horizontalMenu-list">
                         <li aria-haspopup="true"><i class="fe fe-home"></i><a th:href="@{/}">Home </a></li>
                         <li aria-haspopup="true" th:if="${isAdmin}">
-                            <i class="fe fe-codepen"></i><a th:href="@{/auth/addons/approve}">Approve New Addons</a>
+                            <i class="fe fe-codepen"></i><a th:href="@{/auth/addon/approve}">Approve New Addons</a>
                         </li>
                         <li aria-haspopup="true">
-                            <i class="fe fe-codepen"></i><a th:href="@{/addons/all}">All Addons</a>
+                            <i class="fe fe-codepen"></i><a th:href="@{/addon/all}">All Addons</a>
                         </li>
                         <li aria-haspopup="true" th:if="${isAdmin}">
-                            <i class="fe fe-users"></i><a th:href="@{/admins/users/all}">All Users</a></li>
+                            <i class="fe fe-users"></i><a th:href="@{/auth/user/all}">All Users</a></li>
                         <li aria-haspopup="true" th:if="${isEnabledUser}">
-                            <i class="fe fe-upload"></i> <a th:href="@{/auth/addons/new}"> Upload Addon</a></li>
+                            <i class="fe fe-upload"></i> <a th:href="@{/auth/addon/create}"> Upload Addon</a></li>
                         <li aria-haspopup="true" th:if="${isEnabledUser}">
-                            <i class="fa fa-envelope"></i> <a th:href="@{/user/invite}"> Invite a friend</a></li>
+                            <i class="fa fa-envelope"></i> <a th:href="@{/auth/user/invite}"> Invite a friend</a></li>
                         <li aria-haspopup="true"><i class="fe fe-globe"></i><a th:href="@{/contact}"> Contacts</a>
                         </li>
                     </ul>
                 </nav>
             </div>
         </div>
-    </div><!--/Horizontal-main -->
+        <!--/Horizontal-main -->
+
+    </div><!--/Topbar-->
 
     <section>
         <div class="bannerimg">
@@ -281,7 +282,7 @@
                 <div class="single-page w-100 p-0">
                     <div class="wrapper wrapper2">
 
-                        <form id="forgotpsd" class="card-body" th:action="@{/user/inviteFriend}"  method="post">
+                        <form id="forgotpsd" class="card-body" th:action="@{/user/inviteFriend}" method="post">
                             <h3 class="pb-2">Enter email</h3>
                             <div class="mail">
                                 <input type="email" name="friendEmail">

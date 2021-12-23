@@ -90,7 +90,6 @@
             <div class="container">
                 <div class="d-flex">
                     <div class="header-search-logo d-none d-lg-block">
-<!--                        <a class="header-logo header-brand-img" href="index.html"></a>-->
                     </div>
                     <div class="d-flex ml-auto header-right-icons header-search-icon">
                         <div class="dropdown d-md-flex notifications">
@@ -189,33 +188,27 @@
                                 <div class="top-bar-right">
                                     <ul class="custom">
                                         <li th:unless="${isAuthenticated}">
-                                            <a href="register.html"
-                                               th:href="@{/auth/register}"
+                                            <a th:href="@{/auth/register}"
                                                class="text-dark"><i class="fa fa-user mr-1"></i>
                                                 <span>Register</span></a>
                                         </li>
                                         <li th:unless="${isAuthenticated}">
-                                            <a href="login.html"
-                                               th:href="@{/auth/login}"
+                                            <a th:href="@{/auth/login}"
                                                class="text-dark"><i class="fa fa-sign-in mr-1"></i>
                                                 <span>Login</span></a>
                                         </li>
                                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                             <div class="drop-heading">
                                                 <div class="text-center">
-                                                    <h5 class="text-dark mb-1"><h2 th:if="${isAuthenticated}"
-                                                                                   th:text="${session.currentUser}"></h2>
-                                                    </h5>
+                                                    <h5 class="text-dark mb-1">
+                                                        <h2 th:if="${isAuthenticated}"
+                                                            th:text="${session.currentUser}"></h2></h5>
                                                 </div>
                                             </div>
                                             <div class="dropdown-divider m-0"></div>
-                                            <a class="dropdown-item" href="users/edit-profile.html"
-                                               th:href="@{/user/updateDetails}">
+                                            <a class="dropdown-item" th:href="@{/auth/user/update}">
                                                 <i class="dropdown-icon ti-write"></i>Edit Profile
                                             </a>
-<!--                                            <a class="dropdown-item" href="myads.html">-->
-<!--                                                <i class="dropdown-icon  fe fe-codepen"></i> My Addons-->
-<!--                                            </a>-->
                                             <div class="dropdown-divider mt-0"></div>
                                             <a class="dropdown-item" th:href="@{/auth/logout}">
                                                 <i class="dropdown-icon ti-unlock"></i> Logout
@@ -245,24 +238,26 @@
                     <ul class="horizontalMenu-list">
                         <li aria-haspopup="true"><i class="fe fe-home"></i><a th:href="@{/}">Home </a></li>
                         <li aria-haspopup="true" th:if="${isAdmin}">
-                            <i class="fe fe-codepen"></i><a th:href="@{/auth/addons/approve}">Approve New Addons</a>
+                            <i class="fe fe-codepen"></i><a th:href="@{/auth/addon/approve}">Approve New Addons</a>
                         </li>
                         <li aria-haspopup="true">
-                            <i class="fe fe-codepen"></i><a th:href="@{/addons/all}">All Addons</a>
+                            <i class="fe fe-codepen"></i><a th:href="@{/addon/all}">All Addons</a>
                         </li>
                         <li aria-haspopup="true" th:if="${isAdmin}">
-                            <i class="fe fe-users"></i><a th:href="@{/admins/users/all}">All Users</a></li>
+                            <i class="fe fe-users"></i><a th:href="@{/auth/user/all}">All Users</a></li>
                         <li aria-haspopup="true" th:if="${isEnabledUser}">
-                            <i class="fe fe-upload"></i> <a th:href="@{/auth/addons/new}"> Upload Addon</a></li>
+                            <i class="fe fe-upload"></i> <a th:href="@{/auth/addon/create}"> Upload Addon</a></li>
                         <li aria-haspopup="true" th:if="${isEnabledUser}">
-                            <i class="fa fa-envelope"></i> <a th:href="@{/user/invite}"> Invite a friend</a></li>
+                            <i class="fa fa-envelope"></i> <a th:href="@{/auth/user/invite}"> Invite a friend</a></li>
                         <li aria-haspopup="true"><i class="fe fe-globe"></i><a th:href="@{/contact}"> Contacts</a>
                         </li>
                     </ul>
                 </nav>
             </div>
         </div>
-    </div><!--/Horizontal-main -->
+        <!--/Horizontal-main -->
+
+    </div><!--Topbar-->
 
     <!--Section-->
     <section>
@@ -275,30 +270,18 @@
                     </div>
 
                     <!--Search Form-->
-                    <form th:action="@{/addons/all}">
+                    <form th:action="@{/addon/all}">
                         <div class="row">
                             <div class="col-xl-10 col-lg-12 col-md-12 d-block mx-auto">
                                 <div class="search-form">
                                     <input th:name="searchedValue" type="search" class="form-control input-lg"
-                                           id="text4"
-                                           placeholder="Search addon by name...">
+                                           id="text4" placeholder="Search addon by name...">
                                     <button class="btn ripple "><i class="fe fe-search"></i></button>
 
                                 </div>
                             </div>
                         </div>
                     </form>
-
-                    <!--Search Original-->
-<!--                    <div class="row mb-5">-->
-<!--                        <div class="col-xl-8 col-lg-12 col-md-12 d-block mx-auto">-->
-<!--                            <div class="search-form">-->
-<!--                                <input type="text" class="form-control input-lg keywords-input" id="text4"-->
-<!--                                       placeholder="Search Product.....">-->
-<!--                                <button class="btn ripple "><i class="fe fe-search"></i></button>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
 
                 </div>
             </div>
@@ -667,9 +650,7 @@
                         </div>
                         <li th:unless="${isAuthenticated}">
                             <h3 class="mt-3 mb-2">Upload addons for the first time?</h3>
-                            <p>Register</p>
-                            <a href="register.html"
-                               th:href="@{/auth/register}"
+                            <a th:href="@{/auth/register}"
                                class="btn ripple  btn-primary">Create free account</a>
                     </div>
                 </div>
@@ -683,9 +664,7 @@
                         </div>
                         <li th:unless="${isAuthenticated}">
                             <h3 class="mt-3 mb-2">Already have an account?</h3>
-                            <p>Login</p>
-                            <a href="login.html"
-                               th:href="@{/auth/login}"
+                            <a th:href="@{/auth/login}"
                                class=" btn ripple  btn-secondary">Login</a>
                     </div>
                 </div>

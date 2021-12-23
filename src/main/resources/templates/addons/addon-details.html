@@ -385,13 +385,14 @@
                                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                         <div class="drop-heading">
                                             <div class="text-center">
-                                                <h5 class="text-dark mb-1"><h2 th:if="${isAuthenticated}"
-                                                                               th:text="${session.currentUser}"></h2>
-                                                </h5>
+                                                <h5 class="text-dark mb-1">
+                                                    <h2 th:if="${isAuthenticated}"
+                                                        th:text="${session.currentUser}"></h2></h5>
                                             </div>
                                         </div>
                                         <div class="dropdown-divider m-0"></div>
-                                        <a class="dropdown-item" href="mydash.html" th:href="@{/user/updateDetails}">
+                                        <a class="dropdown-item" th:href="@{/auth/user/update}">
+                                        <a class="dropdown-item" th:href="@{/auth/user/update}">
                                             <i class="dropdown-icon ti-write"></i>Edit Profile
                                         </a>
                                         <div class="dropdown-divider mt-0"></div>
@@ -423,26 +424,26 @@
                     <ul class="horizontalMenu-list">
                         <li aria-haspopup="true"><i class="fe fe-home"></i><a th:href="@{/}">Home </a></li>
                         <li aria-haspopup="true" th:if="${isAdmin}">
-                            <i class="fe fe-codepen"></i><a th:href="@{/auth/addons/approve}">Approve New Addons</a>
+                            <i class="fe fe-codepen"></i><a th:href="@{/auth/addon/approve}">Approve New Addons</a>
                         </li>
                         <li aria-haspopup="true">
-                            <i class="fe fe-codepen"></i><a th:href="@{/addons/all}">All Addons</a>
+                            <i class="fe fe-codepen"></i><a th:href="@{/addon/all}">All Addons</a>
                         </li>
                         <li aria-haspopup="true" th:if="${isAdmin}">
-                            <i class="fe fe-users"></i><a th:href="@{/admins/users/all}">All Users</a></li>
+                            <i class="fe fe-users"></i><a th:href="@{/auth/user/all}">All Users</a></li>
                         <li aria-haspopup="true" th:if="${isEnabledUser}">
-                            <i class="fe fe-upload"></i> <a th:href="@{/auth/addons/new}"> Upload Addon</a></li>
+                            <i class="fe fe-upload"></i> <a th:href="@{/auth/addon/create}"> Upload Addon</a></li>
                         <li aria-haspopup="true" th:if="${isEnabledUser}">
-                            <i class="fe fe-upload"></i> <a th:href="@{/user/invite}"> Invite a friend</a></li>
+                            <i class="fa fa-envelope"></i> <a th:href="@{/auth/user/invite}"> Invite a friend</a></li>
                         <li aria-haspopup="true"><i class="fe fe-globe"></i><a th:href="@{/contact}"> Contacts</a>
                         </li>
-                    </ul>
-                    <ul class="mb-0">
                     </ul>
                 </nav>
             </div>
         </div>
-    </div><!--/Horizontal-main -->
+        <!--/Horizontal-main -->
+
+    </div><!--/Topbar-->
 
     <!--Section-->
     <div>
@@ -451,24 +452,29 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-9 col-lg-12 col-md-12 d-block mx-auto">
-                            <div class="text-center text-white text-property mb-4">
-                                <h1 class=""> Search Addon </h1>
+                            <div class="text-center text-white text-property">
+                                <h1 class="">Search Addon</h1>
                             </div>
-                            <div class="row">
-                                <div class="col-xl-10 col-lg-12 col-md-12 d-block mx-auto">
-                                    <div class="search-form">
-                                        <input type="text" class="form-control input-lg" id="text4"
-                                               placeholder="Search Addon.....">
-                                        <button class="btn ripple "><i class="fe fe-search"></i></button>
+                            <form th:action="@{/addon/all}">
+                                <div class="row">
+                                    <div class="col-xl-10 col-lg-12 col-md-12 d-block mx-auto">
+                                        <div class="search-form">
+                                            <input th:name="searchedValue" type="search" class="form-control input-lg"
+                                                   id="text4"
+                                                   placeholder="Search addon by name...">
+                                            <button class="btn ripple "><i class="fe fe-search"></i></button>
+
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div><!-- /header-text -->
         </div>
     </div><!--/Section-->
+
 </div><!--/Section-->
 
 <!--Section-->
@@ -509,13 +515,12 @@
                             <div class="p-4 border btn-list"
                                  th:if="${isAdmin or #strings.equals(addon.getCreator().getUsername(),
                                  session.currentUser)}">
-                                <a th:href="@{/auth/addons/{id}/update(id=${addon.getId()})}"
-
+                                <a th:href="@{/auth/addon/{id}/update(id=${addon.getId()})}"
                                    class="btn ripple  btn-primary btn-lg-0"><i
                                         class="fe fe-airplay">
                                 </i> Modify Addon </a>
 
-                                <a th:href="@{/auth/addons/{id}/delete(id=${addon.getId()})}"
+                                <a th:href="@{/auth/addon/{id}/delete(id=${addon.getId()})}"
                                    th:method="delete"
                                    th:if="${isAdmin}"
                                    class="btn ripple  btn-primary btn-lg-0" style="background-color: red"><i
@@ -868,7 +873,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <form th:action="@{/auth/addons/rate/{id}(id=${addon.getId()})}">
+                                            <form th:action="@{/auth/addon/{id}/rate(id=${addon.getId()})}">
                                                 <select name="rate" th:name="rate" style="padding: 1.5%">
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
@@ -1017,7 +1022,7 @@
 
                         </div>
                         <div class="">
-                            <a th:href="@{/user/{id}(id=${addon.getCreator().getId()})}"
+                            <a th:href="@{/auth/user/{id}(id=${addon.getCreator().getId()})}"
                                class="btn ripple btn-light btn-block btn-lg"> View Profile</a>
 
                         </div>
@@ -1057,7 +1062,8 @@
                                 </li>
                                 <li class="pt-2">
                                     <i class="fe fe-github"></i>
-                                    <a style="color: #0166ff" th:href="@{${addon.getOriginLink()}}" target="_blank">Open source code</a>
+                                    <a style="color: #0166ff" th:href="@{${addon.getOriginLink()}}" target="_blank">Open
+                                        source code</a>
                                 </li>
                             </ul>
                         </div>
