@@ -5,11 +5,6 @@ Graduate team project (Java Web Application) of **Hristian Ivanov** and **Ivan I
 
 **Addonis is an Addons Registry web application. Allows users to download addons that are appropriate for their IDE, rate addons uploaded by others and upload their own addons.**
 
-In order to use GitHub API (the application to download information from certain repo) when creating an Addon, please generate your own Personal Access Token 
-(https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
-and change the existing token in GitHubConfig file. Git detects my personal token which i have pushed in my repo and deactivates it! 
-This is why creating Addon function is not available in the project.   
-
 Database username: root   
 Database password: root  
 
