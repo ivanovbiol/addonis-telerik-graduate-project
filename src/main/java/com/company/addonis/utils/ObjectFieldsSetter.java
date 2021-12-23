@@ -3,8 +3,12 @@ package com.company.addonis.utils;
 import com.company.addonis.exceptions.EntityNotFoundException;
 import com.company.addonis.models.Addon;
 import com.company.addonis.models.User;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
@@ -13,13 +17,10 @@ import static com.company.addonis.utils.ObjectFilesGetter.getUserImage;
 
 public class ObjectFieldsSetter {
 
-    public static void setBinaryData(Addon addon,
-                                     MultipartFile file,
-                                     MultipartFile image) throws IOException {
+    public static void setBinaryData(Addon addon, MultipartFile file, MultipartFile image) throws IOException {
         if (image.isEmpty() || file.isEmpty()) {
             throw new EntityNotFoundException("Image or Content are empty");
         }
-
         addon.setImage(image.getBytes());
         addon.setBinaryContent(file.getBytes());
     }
@@ -55,5 +56,16 @@ public class ObjectFieldsSetter {
 
     public static void setUserImageString(User user) {
         user.setImage(getUserImage(user));
+    }
+
+    public static void setUserImageString(List<User> users) {
+        users.forEach(user -> user.setImage(getUserImage(user)));
+    }
+
+    public static void setUserDefaultPhoto(User user) throws IOException {
+        File file = new ClassPathResource("static/default-user-photo/user_default_pic.png").getFile();
+        FileInputStream fileInputStream = new FileInputStream(file);
+        user.setPhoto(fileInputStream.readAllBytes());
+        fileInputStream.close();
     }
 }
