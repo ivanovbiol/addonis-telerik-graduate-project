@@ -182,7 +182,7 @@ public class AddonServiceTest {
         Addon mockAddon = createMockAddon();
         Mockito.when(mockRepository.getAddonsByUser(mockAddon.getCreator().getId())).thenReturn(List.of(mockAddon));
 
-        List<Addon> resultList = addonService.getAllAddonsByUser(mockAddon.getCreator().getId());
+        List<Addon> resultList = addonService.getAddonsByUser(mockAddon.getCreator().getId());
 
         List<Addon> expectedList = List.of(mockAddon);
         expectedList.forEach(this::setStaticMockAddonFields);
