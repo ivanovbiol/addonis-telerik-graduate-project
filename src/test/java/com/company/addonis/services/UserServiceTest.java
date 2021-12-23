@@ -5,6 +5,7 @@ import com.company.addonis.exceptions.EntityNotFoundException;
 import com.company.addonis.models.User;
 import com.company.addonis.repositories.contracts.AddonRepository;
 import com.company.addonis.repositories.contracts.UserRepository;
+import com.company.addonis.services.contracts.EmailSenderService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -27,6 +28,9 @@ public class UserServiceTest {
 
     @Mock
     AddonRepository addonRepository;
+
+    @Mock
+    EmailSenderService emailSenderService;
 
     @InjectMocks
     UserServiceImpl userService;
@@ -161,5 +165,22 @@ public class UserServiceTest {
     public void getAllUsers_Should_CallRepository() {
         userService.getAllUsers();
         Mockito.verify(mockRepository, Mockito.times(1)).getAllUsers();
+    }
+
+    @Test
+    public void create_Should_CallUserRepositoriesAndEmailSenderService(){
+        User user = createMockUser();
+
+        Mockito.when(mockRepository.getByField("username", user.getUsername())).thenThrow(EntityNotFoundException.class);
+        Mockito.when(mockRepository.getByField("email", user.getEmail())).thenThrow(EntityNotFoundException.class);
+        Mockito.when(mockRepository.getByField("phoneNumber", user.getPhoneNumber())).thenThrow(EntityNotFoundException.class);
+
+        Mockito.doNothing().when(mockRepository).create(user);
+        Mockito.doNothing().when(emailSenderService).sendEmail(user);
+
+        userService.create(user);
+
+        Mockito.verify(mockRepository, Mockito.times(1)).create(user);
+        Mockito.verify(emailSenderService, Mockito.times(1)).sendEmail(user);
     }
 }
