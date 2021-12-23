@@ -77,7 +77,7 @@ public class AddonServiceImpl implements AddonService {
     }
 
     @Override
-    public List<Addon> getAllAddonsByUser(int id) {
+    public List<Addon> getAddonsByUser(int id) {
         List<Addon> addons = addonRepository.getAddonsByUser(id);
         setAddonImageString(addons);
         setAddonCreatorImageString(addons);

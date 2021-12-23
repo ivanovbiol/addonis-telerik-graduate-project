@@ -24,7 +24,7 @@ public interface AddonService {
 
     List<Addon> getByColumn(String field, int count);
 
-    List<Addon> getAllAddonsByUser(int id);
+    List<Addon> getAddonsByUser(int id);
 
     List<Addon> getByStatus(String approved);
 
