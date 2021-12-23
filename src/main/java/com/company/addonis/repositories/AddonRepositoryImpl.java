@@ -115,7 +115,7 @@ public class AddonRepositoryImpl extends BaseModifyRepositoryImpl<Addon> impleme
     public List<Addon> getAddonsByUser(int id) {
         try (Session session = getSessionFactory().openSession()) {
             Query<Addon> query = session.createQuery(
-                    "from Addon where creator.id = :id", Addon.class);
+                    "from Addon where creator.id = :id and status.id = 2", Addon.class);
             query.setParameter("id", id);
 
             return query.list();
