@@ -71,12 +71,18 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> search(String searchedValue) {
-        return userRepository.search(searchedValue);
+        List<User> users = userRepository.search(searchedValue);
+        setUserImageString(users);
+        users.forEach(user -> user.setUploadedAddons(addonRepository.getAddonsByUser(user.getId()).size()));
+        return users;
     }
 
     @Override
     public List<User> getAllUsers() {
-        return userRepository.getAllUsers();
+        List<User> users = userRepository.getAllUsers();
+        setUserImageString(users);
+        users.forEach(user -> user.setUploadedAddons(addonRepository.getAddonsByUser(user.getId()).size()));
+        return users;
     }
 
     public void validateUserInfo(User user) {

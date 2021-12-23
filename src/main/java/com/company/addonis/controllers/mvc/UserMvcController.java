@@ -20,12 +20,11 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 
 import static com.company.addonis.controllers.mvc.AuthenticationController.PASSWORD_CONFIRMATION_ERROR;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/auth/user")
 public class UserMvcController extends BaseAuthenticationController {
 
     public static final String OLD_PASSWORD_CONFIRMATION_ERROR = "Incorrect old password!";
@@ -45,82 +44,85 @@ public class UserMvcController extends BaseAuthenticationController {
         this.emailSenderService = emailSenderService;
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public String getById(@Valid @PathVariable int id, Model model) {
         User user = userService.getById(id);
         model.addAttribute("user", user);
         return "users/user-profile";
     }
 
-    @GetMapping("/updateDetails")
+    @GetMapping("/update")
     public String update(HttpSession session, Model model) {
-        User user = getCurrentUser(session);
-        List<Addon> addons = addonService.getAllAddonsByUser(user.getId());
+        User user = getAuthenticationHelper().tryGetUser(session);
+        List<Addon> addons = addonService.getAddonsByUser(user.getId());
         model.addAttribute("userToUpdateDetails", new UserDetailsUpdateDto());
         model.addAttribute("addons", addons);
         model.addAttribute("user", user);
-        return "users/edit-profile";
+        return "users/user-edit-profile";
     }
 
-    @PostMapping("/updateDetails")
+    @PostMapping("/update")
     public String update(HttpSession session,
-                         @ModelAttribute("userToUpdateDetails") UserDetailsUpdateDto userDetailsUpdateDto,
-                         BindingResult errors) throws IOException {
+                         @Valid @ModelAttribute("userToUpdateDetails")
+                                 UserDetailsUpdateDto userDetailsUpdateDto,
+                         BindingResult errors, Model model) throws IOException {
+        User user = getAuthenticationHelper().tryGetUser(session);
         if (errors.hasErrors()) {
-            return "users/edit-profile";
+            List<Addon> addons = addonService.getAddonsByUser(user.getId());
+            model.addAttribute("user", user);
+            model.addAttribute("addons", addons);
+            return "users/user-edit-profile";
         }
 
         try {
-            User user = getCurrentUser(session);
             User userToUpdate = userMapper.updateUserDetails(userDetailsUpdateDto, user.getId());
             userService.update(userToUpdate);
-            return "redirect:/user/updateDetails";
+            return "redirect:/auth/user/update";
         } catch (DuplicateEntityException e) {
             errors.rejectValue("email", "email_error", e.getMessage());
-            return "users/edit-profile";
+            return "users/user-edit-profile";
         }
     }
 
     @GetMapping("/changePassword")
     public String changePassword(Model model, HttpSession session) {
-        User user = getCurrentUser(session);
+        User user = getAuthenticationHelper().tryGetUser(session);
         model.addAttribute("userToUpdatePassword", new UserPasswordChangeDto());
         model.addAttribute("user", user);
-        return "users/change-password";
+        return "users/user-change-password";
     }
 
     @PostMapping("/changePassword")
     public String changePassword(HttpSession session,
-                                 @ModelAttribute("userToUpdatePassword") UserPasswordChangeDto userPasswordChangeDto,
+                                 @Valid @ModelAttribute("userToUpdatePassword")
+                                         UserPasswordChangeDto userPasswordChangeDto,
                                  BindingResult errors, Model model) {
-
-        if (errors.hasErrors()) {
-            return "users/change-password";
-        }
-        User user = getCurrentUser(session);
+        User user = getAuthenticationHelper().tryGetUser(session);
         model.addAttribute("user", user);
-        if (!Objects.equals(user.getPassword(), userPasswordChangeDto.getOldPassword())) {
+        if (errors.hasErrors()) {
+            return "users/user-change-password";
+        }
+        if (!user.getPassword().equals(userPasswordChangeDto.getOldPassword())) {
             errors.rejectValue("oldPassword", "password_error",
                     OLD_PASSWORD_CONFIRMATION_ERROR);
-            return "users/change-password";
+            return "users/user-change-password";
 
         }
-        if (!Objects.equals(userPasswordChangeDto.getNewPassword(), userPasswordChangeDto.getConfirmNewPassword())) {
+        if (!userPasswordChangeDto.getNewPassword().equals(userPasswordChangeDto.getConfirmNewPassword())) {
             errors.rejectValue("confirmNewPassword", "password_error",
                     PASSWORD_CONFIRMATION_ERROR);
-            return "users/change-password";
+            return "users/user-change-password";
 
         }
         user.setPassword(userPasswordChangeDto.getNewPassword());
         userService.update(user);
-        return "redirect:/user/updateDetails";
-
+        return "redirect:/auth/user/update";
     }
 
     @GetMapping("/invite")
     public String invite(HttpSession session, Model model) {
         try {
-            User user = getCurrentUser(session);
+            User user = getAuthenticationHelper().tryGetUser(session);
             model.addAttribute("user", user);
             return "invite";
         } catch (AuthenticationFailureException e) {
@@ -129,7 +131,7 @@ public class UserMvcController extends BaseAuthenticationController {
         }
     }
 
-    @PostMapping("/inviteFriend")
+    @PostMapping("/invite")
     public String inviteFriend(Model model,
                                @RequestParam String friendEmail) {
         try {
@@ -141,7 +143,36 @@ public class UserMvcController extends BaseAuthenticationController {
         }
     }
 
-    private User getCurrentUser(HttpSession session) {
-        return getAuthenticationHelper().tryGetUser(session);
+    @GetMapping("/all")
+    public String showAll(Model model,
+                          @RequestParam(value = "searchedValue", required = false) String search) {
+        List<User> users;
+        if (search != null) {
+            users = userService.search(search);
+        } else {
+            users = userService.getAllUsers();
+        }
+        int usersCount = userService.getAllUsers().size();
+        model.addAttribute("users", users);
+        model.addAttribute("usersCount", usersCount);
+
+        return "users/users-all";
+    }
+
+
+    @GetMapping("/{id}/block")
+    public String blockUser(@PathVariable int id) {
+        User user = userService.getById(id);
+        user.setEnabled(false);
+        userService.update(user);
+        return "redirect:/auth/user/all";
+    }
+
+    @GetMapping("/{id}/unblock")
+    public String unblockUser(@PathVariable int id) {
+        User user = userService.getById(id);
+        user.setEnabled(true);
+        userService.update(user);
+        return "redirect:/auth/user/all";
     }
 }

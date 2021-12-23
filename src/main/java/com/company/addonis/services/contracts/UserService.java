@@ -22,5 +22,4 @@ public interface UserService {
     List<User> search(String searchedValue);
 
     List<User> getAllUsers();
-
 }
