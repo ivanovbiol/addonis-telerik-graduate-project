@@ -4,21 +4,21 @@ import javax.validation.constraints.*;
 
 public class AddonDto {
 
-    @NotBlank(message = "Name can't be empty.")
+    @NotBlank(message = "Name can not be empty.")
     @Size(min = 3, max = 30, message = "Name should be between 3 and 30 symbols.")
     private String name;
 
     @Positive
     private int ideId;
 
-    @Size(min = 10, message = "Description should be at least 10 charachters.")
+    @Size(min = 10, message = "Description should be at least 10 characters.")
     private String description;
 
-    @NotBlank(message = "List with tags can't be empty.")
+    @NotBlank(message = "List your tags separated by comma (e.g. Tag1, Tag2, Tag3)")
     private String tags;
 
-    @NotNull(message = "Origin link can't be empty.")
-    @Pattern(regexp = "https:\\/\\/github\\.com\\/.+\\/.+",
+    @NotNull(message = "Origin link can not be empty.")
+    @Pattern(regexp = "https://github\\.com/.+/.+",
             message = "Origin Link should be in a GitHub repository.")
     private String originLink;
 
@@ -40,14 +40,6 @@ public class AddonDto {
     public void setIdeId(int ideId) {
         this.ideId = ideId;
     }
-
-//    public int getCreatorId() {
-//        return creatorId;
-//    }
-//
-//    public void setCreatorId(int creatorId) {
-//        this.creatorId = creatorId;
-//    }
 
     public String getDescription() {
         return description;
