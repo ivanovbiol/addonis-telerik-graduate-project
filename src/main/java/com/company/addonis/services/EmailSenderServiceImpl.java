@@ -45,7 +45,7 @@ public class EmailSenderServiceImpl implements EmailSenderService {
 
     @Override
     public void inviteFriend(String friendEmail) {
-        if (!friendEmail.endsWith("@gmail.com") || !friendEmail.endsWith("@abv.bg")) {
+        if (!(friendEmail.endsWith("@gmail.com") || friendEmail.endsWith("@abv.bg"))) {
             throw new UnsupportedOperationException("Email should be in gmail.com or abv.bg.");
         }
         String subject = "Come and register!";
