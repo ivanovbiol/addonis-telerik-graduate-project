@@ -22,6 +22,10 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
+import java.io.IOException;
+
+import static com.company.addonis.utils.ObjectFieldsSetter.setUserDefaultPhoto;
+
 @Controller
 @RequestMapping("/auth")
 public class AuthenticationController extends BaseAuthenticationController {
@@ -89,9 +93,10 @@ public class AuthenticationController extends BaseAuthenticationController {
         try {
             UserDto userDto = userMapper.fromDtoToUser(registerDto);
             User user = userMapper.fromDto(userDto);
+            setUserDefaultPhoto(user);
             userService.create(user);
-            return "index";
-        } catch (DuplicateEntityException e) {
+            return "redirect:/";
+        } catch (DuplicateEntityException | IOException e) {
             bindingResult.rejectValue("username", "username_error", e.getMessage());
             return "register";
         }
