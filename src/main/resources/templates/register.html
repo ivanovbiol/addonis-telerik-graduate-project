@@ -92,35 +92,30 @@
         <!--Horizontal-main -->
         <div class="header-style horizontal-main bg-dark-transparent clearfix">
             <div class="horizontal-mainwrapper container clearfix">
-                <div class="header-style horizontal-main bg-dark-transparent clearfix">
-                    <div class="horizontal-mainwrapper container clearfix">
-                        <nav class="horizontalMenu clearfix d-md-flex">
-                            <ul class="horizontalMenu-list">
-                                <li aria-haspopup="true"><i class="fe fe-home"></i><a th:href="@{/}">Home </a></li>
-                                <li aria-haspopup="true" th:if="${isAdmin}">
-                                    <i class="fe fe-codepen"></i><a th:href="@{/auth/addons/approve}">Approve New
-                                    Addons</a>
-                                </li>
-                                <li aria-haspopup="true">
-                                    <i class="fe fe-codepen"></i><a th:href="@{/addons/all}">All Addons</a>
-                                </li>
-                                <li aria-haspopup="true" th:if="${isAdmin}">
-                                    <i class="fe fe-users"></i><a th:href="@{/admins/users/all}">All Users</a></li>
-                                <li aria-haspopup="true" th:if="${isEnabledUser}">
-                                    <i class="fe fe-upload"></i> <a th:href="@{/auth/addons/new}"> Upload Addon</a></li>
-                                <li aria-haspopup="true" th:if="${isEnabledUser}">
-                                    <i class="fa fa-envelope"></i> <a th:href="@{/user/invite}"> Invite a friend</a>
-                                </li>
-                                <li aria-haspopup="true"><i class="fe fe-globe"></i><a th:href="@{/contact}">
-                                    Contacts</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
+                <nav class="horizontalMenu clearfix d-md-flex">
+                    <ul class="horizontalMenu-list">
+                        <li aria-haspopup="true"><i class="fe fe-home"></i><a th:href="@{/}">Home </a></li>
+                        <li aria-haspopup="true" th:if="${isAdmin}">
+                            <i class="fe fe-codepen"></i><a th:href="@{/auth/addon/approve}">Approve New Addons</a>
+                        </li>
+                        <li aria-haspopup="true">
+                            <i class="fe fe-codepen"></i><a th:href="@{/addon/all}">All Addons</a>
+                        </li>
+                        <li aria-haspopup="true" th:if="${isAdmin}">
+                            <i class="fe fe-users"></i><a th:href="@{/auth/user/all}">All Users</a></li>
+                        <li aria-haspopup="true" th:if="${isEnabledUser}">
+                            <i class="fe fe-upload"></i> <a th:href="@{/auth/addon/create}"> Upload Addon</a></li>
+                        <li aria-haspopup="true" th:if="${isEnabledUser}">
+                            <i class="fa fa-envelope"></i> <a th:href="@{/auth/user/invite}"> Invite a friend</a></li>
+                        <li aria-haspopup="true"><i class="fe fe-globe"></i><a th:href="@{/contact}"> Contacts</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
-    </div><!--/Horizontal-main -->
+        <!--/Horizontal-main -->
+
+    </div><!--/Topbar-->
 
     <section>
         <div class="bannerimg">
