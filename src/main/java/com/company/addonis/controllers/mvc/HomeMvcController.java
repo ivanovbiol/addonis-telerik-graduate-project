@@ -79,7 +79,7 @@ public class HomeMvcController extends BaseAuthenticationController {
         return "contact";
     }
 
-    @GetMapping("addons/all")
+    @GetMapping("addon/all")
     public String getAll(Model model,
                          @RequestParam(value = "ide", required = false) String ide,
                          @RequestParam(value = "searchedValue", required = false) String name,
@@ -98,7 +98,7 @@ public class HomeMvcController extends BaseAuthenticationController {
         return "addons/addons-all";
     }
 
-    @GetMapping("addons/all/pending")
+    @GetMapping("addon/all/pending")
     public String getAllPending(Model model,
                                 @RequestParam(value = "searchedValue", required = false) String name) {
         try {
