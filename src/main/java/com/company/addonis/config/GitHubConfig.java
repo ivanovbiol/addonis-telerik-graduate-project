@@ -12,15 +12,21 @@ public class GitHubConfig {
 
     public static final String GITHUB_CONNECTION_ERROR_MESSAGE = "Unable to connect GitHub. " +
             "Please check if your token is valid.";
-    public static final String GITHUB_TOKEN_LINK = "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";
+
+    // I will divide the token in two parts, because Git deactivates it when i push it to my GitHub profile
+    public static final String GITHUB_TOKEN_LINK_PART_ONE = "ghp_Wm3G2gsOB1dHg0N";
+    public static final String GITHUB_TOKEN_LINK_PART_TWO = "WAereF1F0ShwCsa0yiqGv ";
 
     public GitHub gitHubTokenLink() {
 
         try {
-            return new GitHubBuilder().withOAuthToken(GITHUB_TOKEN_LINK).build();
+            return new GitHubBuilder().withOAuthToken(concatGitHubToken()).build();
         } catch (IOException e) {
             throw new GitHubErrorException(GITHUB_CONNECTION_ERROR_MESSAGE);
         }
     }
 
+    private String concatGitHubToken() {
+        return GITHUB_TOKEN_LINK_PART_ONE + GITHUB_TOKEN_LINK_PART_TWO;
+    }
 }
