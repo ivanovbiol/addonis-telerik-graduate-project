@@ -12,7 +12,7 @@ public class GitHubConfig {
 
     public static final String GITHUB_CONNECTION_ERROR_MESSAGE = "Unable to connect GitHub. " +
             "Please check if your token is valid.";
-    public static final String GITHUB_TOKEN_LINK = "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";
+    public static final String GITHUB_TOKEN_LINK = "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";
 
     public GitHub gitHubTokenLink() {
 
