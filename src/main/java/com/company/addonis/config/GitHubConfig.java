@@ -14,8 +14,8 @@ public class GitHubConfig {
             "Please check if your token is valid.";
 
     // I will divide the token in two parts, because Git deactivates it when i push it to my GitHub profile
-    public static final String GITHUB_TOKEN_LINK_PART_ONE = "ghp_Wm3G2gsOB1dHg0N";
-    public static final String GITHUB_TOKEN_LINK_PART_TWO = "WAereF1F0ShwCsa0yiqGv ";
+    public static final String GITHUB_TOKEN_LINK_PART_ONE = "ghp_pfP48mbpBKSPxY";
+    public static final String GITHUB_TOKEN_LINK_PART_TWO = "hI6mwrT1gW6VWBem0SAXWt ";
 
     public GitHub gitHubTokenLink() {
 
