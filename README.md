@@ -89,6 +89,12 @@ Some of the possible actions for **admin** users are:
 ![scheme](/images/AllAddons.PNG)
 
 
+## NOTE  
+
+Currently the invite a frient and email profile verification is unavalable because of Gmail's terms:
+
+![scheme](/images/mail.PNG)
+
 ***
 
 
