@@ -91,7 +91,7 @@ Some of the possible actions for **admin** users are:
 
 ## NOTE  
 
-Currently the invite a frient and email profile verification is unavalable because of Gmail's terms:
+Currently the invite a frient and email profile verification (involved in the registration process) functionalities are unavailable because of Gmail's terms:
 
 ![scheme](/images/mail.PNG)
 
